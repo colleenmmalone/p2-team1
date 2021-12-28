@@ -25,6 +25,10 @@ public class MainDriver {
 					orderContentDao.save(orderContents);
 					orderContentDao.addOrderContent();
 					
+					session = HibernateSessFact.getSession(); //retrieve session from session factory util
+					results = LoginsDAO.getAllLogins(session); //get results from Hibernate method, returned as List object
+					System.out.println(results);
+					session.close(); //be sure to close session when done 
 		
 		}
 }
