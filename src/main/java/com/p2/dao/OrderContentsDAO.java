@@ -1,6 +1,5 @@
 package com.p2.dao;
 
-<<<<<<< HEAD
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -24,8 +23,8 @@ public class OrderContentsDAO {
 			// create order content object and set values
 			OrderContents orderContents = new OrderContents();
 			
-			orderContents.setItemid(itemid);
-			orderContents.setOrderid(orderid);
+			orderContents.setItemID(itemid);
+			orderContents.setOrderID(orderid);
 			orderContents.setItem(item);
 			orderContents.setPrice(price);
 			orderContents.setQuantity(quantity);
@@ -44,8 +43,5 @@ public class OrderContentsDAO {
 	}
 	
 	// delete from cart ?
-=======
-public class OrderContentsDAO {
->>>>>>> colleen
 
 }
