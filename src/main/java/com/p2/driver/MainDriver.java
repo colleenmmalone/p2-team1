@@ -13,10 +13,10 @@ public class MainDriver {
 		public static void main(String[] args) {
 
 				//this would be inside a controller.....
-					session = HibernateSessFact.getSession();
-					results = LoginsDAO.getAllLogins(session);
+					session = HibernateSessFact.getSession(); //retrieve session from session factory util
+					results = LoginsDAO.getAllLogins(session); //get results from Hibernate method, returned as List object
 					System.out.println(results);
-					session.close();
+					session.close(); //be sure to close session when done 
 		
 		}
 }
