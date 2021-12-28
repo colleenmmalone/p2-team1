@@ -1,5 +1,6 @@
 package com.p2.dao;
 
+<<<<<<< HEAD
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -43,5 +44,8 @@ public class OrderContentsDAO {
 	}
 	
 	// delete from cart ?
+=======
+public class OrderContentsDAO {
+>>>>>>> colleen
 
 }
