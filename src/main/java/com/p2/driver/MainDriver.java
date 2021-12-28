@@ -3,20 +3,28 @@ package com.p2.driver;
 import java.util.List;
 import org.hibernate.Session;
 import com.p2.dao.LoginsDAO;
+import com.p2.dao.OrderContentsDAO;
+import com.p2.model.OrderContents;
 import com.p2.util.HibernateSessFact;
 
 
 public class MainDriver {
 	static Session session;
-	static List results;
+	static Integer results;
 
 		public static void main(String[] args) {
 
 				//this would be inside a controller.....
-					session = HibernateSessFact.getSession();
-					results = LoginsDAO.getAllLogins(session);
-					System.out.println(results);
-					session.close();
+//					session = HibernateSessFact.getSession();
+//					results = LoginsDAO.getAllLogins(session);
+//					System.out.println(results);
+//					session.close();
+					
+					OrderContentsDAO orderContentDao = new OrderContentsDAO();
+					OrderContents orderContents = new OrderContents(4, 4, 5, "test", 5);
+					orderContentDao.save(orderContents);
+					orderContentDao.addOrderContent();
+					
 		
 		}
 }

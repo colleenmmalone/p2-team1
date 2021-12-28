@@ -4,10 +4,10 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name = "com.p2.model.OrderContents" table = "orderContents">
+   <class name = "com.p2.model.OrderContents" table = "ordercontents">
 
       
-      <id name = "itemID" type = "int" column = "itemid">
+      <id name = "itemID" type = "int" column = "ordercontentsid">
          <generator class="native"/>
       </id>
       

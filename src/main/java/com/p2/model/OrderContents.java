@@ -3,12 +3,17 @@ package com.p2.model;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name="ordercontents")
 public class OrderContents {
 	@Id
+	@GeneratedValue
+	@Column
 	private int itemID;
+	@Column
 	private int orderID, quantity;
+	@Column
 	private String item;
+	@Column
 	private double price;
 	
 	
