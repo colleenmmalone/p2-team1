@@ -23,6 +23,7 @@
         <mapping resource="orders.hbm.xml" />
         <mapping resource="ordercontents.hbm.xml" />
         <mapping resource="creditcards.hbm.xml" />
+        <!-- mapping resource="inventory.hbm.xml" /-->
        
     </session-factory>
 </hibernate-configuration>
