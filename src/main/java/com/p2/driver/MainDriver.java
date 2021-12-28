@@ -21,7 +21,7 @@ public class MainDriver {
 //					session.close();
 					
 					OrderContentsDAO orderContentDao = new OrderContentsDAO();
-					OrderContents orderContents = new OrderContents(4, 4, 5, "test", 5);
+					OrderContents orderContents = new OrderContents(1, "CakeTest", 10, 5);
 					orderContentDao.save(orderContents);
 					orderContentDao.addOrderContent();
 					

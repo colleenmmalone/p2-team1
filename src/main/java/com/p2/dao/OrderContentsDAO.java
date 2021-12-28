@@ -17,18 +17,17 @@ public class OrderContentsDAO {
 		Session session = HibernateSessFact.getSession();
 
 		// random UUID?
-		Integer orderContentId = null;
 
 		try {
 
 			session.beginTransaction();
 			// create order content object and set values
-			String hql = "INSERT INTO OrderContents ( orderID, item, price, quantity) "
-					+ "SELECT orderid, item, price, quantity";
+			String hql = "INSERT INTO OrderContents (item, price, quantity) "
+					+ "SELECT orderid, item, price, quantity WHERE Orderid = 1";
 			Query query = session.createQuery(hql);
 			query.executeUpdate();
 			session.getTransaction().commit();
-
+			session.close();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		}
@@ -44,7 +43,6 @@ public class OrderContentsDAO {
 		transaction = session.beginTransaction();
 		session.save(ordercontents);
 		transaction.commit();
-
 		// will need catch statement
 	}
 

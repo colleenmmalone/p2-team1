@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Table(name="ordercontents")
 public class OrderContents {
 	@Id
-	@GeneratedValue
-	@Column
+	@Column(name = "ordercontentsid", updatable = false, nullable = false)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int itemID;
 	@Column
 	private int orderID, quantity;

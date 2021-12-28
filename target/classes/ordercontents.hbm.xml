@@ -8,7 +8,7 @@
 
       
       <id name = "itemID" type = "int" column = "ordercontentsid">
-         <generator class="native"/>
+         <generator class="identity"/>
       </id>
       
       <property name = "orderID" column = "orderid" type = "int"/>
