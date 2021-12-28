@@ -1,17 +1,27 @@
 package com.p2.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
+// one order can have many order contents. Use one-to-many mapping for orderid
 
 @Entity
 @Table
 public class Orders {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
+	@OneToMany(mappedBy="orders")
 	private int orderID;
+	@Column
 	private int customer;
+	@Column
 	private double total;
+	@Column
 	private Date orderDate;
+	@Column
 	private String orderStatus;
 	
 	public Orders(int orderID, int customer, double total, Date orderDate, String orderStatus) {

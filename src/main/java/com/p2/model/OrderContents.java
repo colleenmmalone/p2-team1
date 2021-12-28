@@ -3,20 +3,21 @@ package com.p2.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="ordercontents")
+@Table(name = "ordercontents")
 public class OrderContents {
 	@Id
-	@Column(name = "ordercontentsid", updatable = false, nullable = false)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int itemID;
 	@Column
-	private int orderID, quantity;
+	@ManyToOne
+	@JoinColumn(name = "orderID")
+	private int orderID;
+	@Column
+	private int quantity;
 	@Column
 	private String item;
 	@Column
 	private double price;
-	
-	
+
 	public OrderContents(int itemID, int orderID, int quantity, String item, double price) {
 		super();
 		this.itemID = itemID;
@@ -25,7 +26,7 @@ public class OrderContents {
 		this.item = item;
 		this.price = price;
 	}
-	
+
 	public OrderContents() {
 		super();
 	}
@@ -75,12 +76,5 @@ public class OrderContents {
 		return "OrderContents [itemID=" + itemID + ", orderID=" + orderID + ", quantity=" + quantity + ", item=" + item
 				+ ", price=" + price + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }

@@ -12,28 +12,19 @@ import com.p2.util.HibernateSessFact;
 public class OrderContentsDAO {
 
 	// method to add items into cart
-	public void addOrderContent() {
+	public void addOrderContent(OrderContents orderContents) {
 		// later on get form input as a class and set those values as the parameters
-		Session session = HibernateSessFact.getSession();
-
-		// random UUID?
-
 		try {
-
+			Session session = HibernateSessFact.getSession();
+		// random UUID?
 			session.beginTransaction();
-			// create order content object and set values
-			String hql = "INSERT INTO OrderContents (item, price, quantity) "
-					+ "SELECT orderid, item, price, quantity WHERE Orderid = 1";
-			Query query = session.createQuery(hql);
-			query.executeUpdate();
+			session.save(orderContents);
 			session.getTransaction().commit();
 			session.close();
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		}
-
 		// for testing purposes check if it returns an id or null
-
 	}
 
 	// save current entity
@@ -46,26 +37,16 @@ public class OrderContentsDAO {
 		// will need catch statement
 	}
 
-	// delete an order based on id?
-	public int deleteOrder(int id) {
-		Transaction transaction = null;
-		int result = 0;
-		try {
-			// delete persistent object
-			Session session = HibernateSessFact.getSession();
-			transaction = session.beginTransaction();
-			OrderContents orderContents = session.get(OrderContents.class, id);
-			String hql = "DELETE FROM OrderContents " + "Where id = :itemId";
-			Query query = session.createQuery(hql);
-			query.setParameter("itemId", id);
-			result = query.executeUpdate();
-			transaction.commit();
-		} catch (HibernateException e) {
-			e.printStackTrace();
+	// delete an order based on id // only deletes persistent data
+	public boolean deleteOrder(int id) {
+		Session session = HibernateSessFact.getSession();
+		Object persistentInstance = session.load(OrderContents.class, id);
+		if (persistentInstance != null) {
+			session.delete(persistentInstance);
+			return true;
 		}
-		return result;
+		return false;
 	}
 
-	// delete from cart ?
 
 }

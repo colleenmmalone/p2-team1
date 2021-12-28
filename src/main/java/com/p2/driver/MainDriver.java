@@ -21,14 +21,14 @@ public class MainDriver {
 //					session.close();
 					
 					OrderContentsDAO orderContentDao = new OrderContentsDAO();
-					OrderContents orderContents = new OrderContents(1, "CakeTest", 10, 5);
+					OrderContents orderContents = new OrderContents();
 					orderContentDao.save(orderContents);
-					orderContentDao.addOrderContent();
+					orderContentDao.addOrderContent(orderContents);
 					
-					session = HibernateSessFact.getSession(); //retrieve session from session factory util
-					results = LoginsDAO.getAllLogins(session); //get results from Hibernate method, returned as List object
-					System.out.println(results);
-					session.close(); //be sure to close session when done 
+//					session = HibernateSessFact.getSession(); //retrieve session from session factory util
+//					results = LoginsDAO.getAllLogins(session); //get results from Hibernate method, returned as List object
+//					System.out.println(results);
+//					session.close(); //be sure to close session when done 
 		
 		}
 }
