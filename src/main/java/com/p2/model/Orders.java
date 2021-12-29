@@ -10,6 +10,7 @@ import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 // one order can have many order contents. Use one-to-many mapping for orderid
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
@@ -29,6 +30,7 @@ public class Orders {
 	@Column
 	private String orderStatus;
 	
+	@ToString.Exclude
 	private Set<OrderContents> orderContents;
 	
 	public Orders(int orderID, int customer, double total, Date orderDate, String orderStatus) {

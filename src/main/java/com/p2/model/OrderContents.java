@@ -3,10 +3,13 @@ package com.p2.model;
 import javax.persistence.*;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
+@EqualsAndHashCode(exclude="orders")
 @Entity
 @Table(name = "ordercontents")
 public class OrderContents {
@@ -21,6 +24,7 @@ public class OrderContents {
 	@Column
 	private double price;
 	
+	@ToString.Exclude
 	private Orders orders;
 
 	public OrderContents(int quantity, String item, double price, Orders orders ) {
