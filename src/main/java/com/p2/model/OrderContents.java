@@ -17,6 +17,8 @@ public class OrderContents {
 	private String item;
 	@Column
 	private double price;
+	
+	private Orders orders;
 
 	public OrderContents(int itemID, int orderID, int quantity, String item, double price) {
 		super();
@@ -69,6 +71,14 @@ public class OrderContents {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+	
+	public Orders getOrders() {
+		return orders;
+	}
+	
+	public void setOrders(Orders orders) {
+		this.orders = orders;
 	}
 
 	@Override

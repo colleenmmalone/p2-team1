@@ -18,7 +18,7 @@ public class OrderContentsDAO {
 			Session session = HibernateSessFact.getSession();
 		// random UUID?
 			session.beginTransaction();
-			session.save(orderContents);
+			//session.save(orderContents);
 			session.getTransaction().commit();
 			session.close();
 		} catch (HibernateException e) {
@@ -34,6 +34,7 @@ public class OrderContentsDAO {
 		transaction = session.beginTransaction();
 		session.save(ordercontents);
 		transaction.commit();
+		session.close();
 		// will need catch statement
 	}
 

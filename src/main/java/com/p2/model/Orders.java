@@ -13,7 +13,6 @@ public class Orders {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	@OneToMany(mappedBy="orders")
 	private int orderID;
 	@Column
 	private int customer;

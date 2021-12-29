@@ -11,10 +11,12 @@
          <generator class="identity"/>
       </id>
       
-      <property name = "orderID" column = "orderid" type = "int"/>
+
       <property name = "item" column = "item" type = "string"/>
       <property name = "price" column = "price" type = "double"/>
       <property name = "quantity" column = "quantity" type = "int"/>
+      <many-to-one class="com.p2.model.Orders"
+      name="orders" cascade="all"/>
       
    </class>
 
