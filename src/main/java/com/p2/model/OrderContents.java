@@ -3,34 +3,38 @@ package com.p2.model;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "ordercontents")
 public class OrderContents {
 	@Id
-	private int itemID;
-	private int orderID, quantity;
+	private int orderContentsId;
+	@Column
+	private int orderID;
+	@Column
+	private int quantity;
+	@Column
 	private String item;
+	@Column
 	private double price;
 	
-	
-	public OrderContents(int itemID, int orderID, int quantity, String item, double price) {
+	private Orders orders;
+
+	public OrderContents(int quantity, String item, double price, Orders orders ) {
 		super();
-		this.itemID = itemID;
-		this.orderID = orderID;
 		this.quantity = quantity;
 		this.item = item;
 		this.price = price;
+		this.orders = orders;
 	}
-	
+
 	public OrderContents() {
-		super();
 	}
 
-	public int getItemID() {
-		return itemID;
+	public int getOrderContentsId() {
+		return orderContentsId;
 	}
 
-	public void setItemID(int itemID) {
-		this.itemID = itemID;
+	public void setOrderContentsId(int orderContentsId) {
+		this.orderContentsId = orderContentsId;
 	}
 
 	public int getOrderID() {
@@ -64,18 +68,19 @@ public class OrderContents {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
+	public Orders getOrders() {
+		return orders;
+	}
+	
+	public void setOrders(Orders orders) {
+		this.orders = orders;
+	}
 
 	@Override
 	public String toString() {
-		return "OrderContents [itemID=" + itemID + ", orderID=" + orderID + ", quantity=" + quantity + ", item=" + item
+		return "OrderContents [itemID=" + orderContentsId + ", orderID=" + orderID + ", quantity=" + quantity + ", item=" + item
 				+ ", price=" + price + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }
