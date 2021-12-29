@@ -32,21 +32,6 @@ public class MainDriver {
 //					System.out.println(results);
 //					session.close();
 			
-			Orders order = new Orders();
-			order.setCustomer(1);
-			order.setOrderStatus("pending");
-			order.setTotal(10);
-			
-			OrderContentsDAO orderContentDao = new OrderContentsDAO();
-			//OrderContents orderContents1 = new OrderContents(5, "Blueberry", 59, order);
-			OrderContents orderContents2 = new OrderContents(10, "testingwithLombok", 59, order);
-
-			Set<OrderContents> ordercontents = new HashSet<OrderContents>();
-			//ordercontents.add(orderContents1);
-			ordercontents.add(orderContents2);
-			order.setOrderContents(ordercontents);
-			
-			orderContentDao.save(order);
 					
 //					session = HibernateSessFact.getSession(); //retrieve session from session factory util
 //					results = LoginsDAO.getAllLogins(session); //get results from Hibernate method, returned as List object

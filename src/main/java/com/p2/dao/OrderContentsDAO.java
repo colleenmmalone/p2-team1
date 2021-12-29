@@ -14,17 +14,25 @@ public class OrderContentsDAO {
 
 	// method to add items into cart
 	// save current entity
-	public void save(Orders order) {
+	public int save(Orders order) {
+		int result = 0;
+		try {
 		Session session = HibernateSessFact.getSession();
 		session.beginTransaction();
 		session.save(order);
 		session.getTransaction().commit();
 		session.close();
-		// will need catch statement
+		result = 1;
+		return result;
+		} catch(HibernateException e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 
 	// delete an order based on id
 	public boolean deleteOrder(int id) {
+		try {
 		Session session = HibernateSessFact.getSession();
 		Transaction transaction = session.beginTransaction();
 		String queryStr = "delete from OrderContents where ordercontentsid =:id";
@@ -34,6 +42,10 @@ public class OrderContentsDAO {
 		transaction.commit();
 		session.clear();
 		session.close();
+		return true;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
 		return false;
 	}
 
