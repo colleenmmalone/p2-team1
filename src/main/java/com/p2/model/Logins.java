@@ -31,6 +31,16 @@ public class Logins {
 		this.status = status;
 	}
 	
+	public Logins(String firstName, String lastName, String email, String pswd, String status) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.pswd = pswd;
+		this.status = status;
+	}
+	
 	public Logins() {
 		super();
 	}
