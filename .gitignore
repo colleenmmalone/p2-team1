@@ -1,4 +1,9 @@
 */.DS_Store
 /.metadata*
 */.metadata*
+<<<<<<< HEAD
 Lumberjack/loggy.log
+=======
+
+/target/
+>>>>>>> origin/main
