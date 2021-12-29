@@ -16,6 +16,7 @@ public class HibernateSessFact {
 		Configuration config = new Configuration(); // load hibernate.cfg.xml
 		config.configure();
 		try {
+			
 			sessionFactory = config.buildSessionFactory(); // create new session factory
 			session = sessionFactory.openSession(); // create new session
 		} catch (Exception e) {
