@@ -6,10 +6,8 @@ import javax.persistence.*;
 @Table(name = "ordercontents")
 public class OrderContents {
 	@Id
-	private int itemID;
+	private int orderContentsId;
 	@Column
-	@ManyToOne
-	@JoinColumn(name = "orderID")
 	private int orderID;
 	@Column
 	private int quantity;
@@ -20,25 +18,23 @@ public class OrderContents {
 	
 	private Orders orders;
 
-	public OrderContents(int itemID, int orderID, int quantity, String item, double price) {
+	public OrderContents(int quantity, String item, double price, Orders orders ) {
 		super();
-		this.itemID = itemID;
-		this.orderID = orderID;
 		this.quantity = quantity;
 		this.item = item;
 		this.price = price;
+		this.orders = orders;
 	}
 
 	public OrderContents() {
-		super();
 	}
 
-	public int getItemID() {
-		return itemID;
+	public int getOrderContentsId() {
+		return orderContentsId;
 	}
 
-	public void setItemID(int itemID) {
-		this.itemID = itemID;
+	public void setOrderContentsId(int orderContentsId) {
+		this.orderContentsId = orderContentsId;
 	}
 
 	public int getOrderID() {
@@ -83,7 +79,7 @@ public class OrderContents {
 
 	@Override
 	public String toString() {
-		return "OrderContents [itemID=" + itemID + ", orderID=" + orderID + ", quantity=" + quantity + ", item=" + item
+		return "OrderContents [itemID=" + orderContentsId + ", orderID=" + orderID + ", quantity=" + quantity + ", item=" + item
 				+ ", price=" + price + "]";
 	}
 

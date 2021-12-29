@@ -3,6 +3,7 @@ package com.p2.model;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.*;
 // one order can have many order contents. Use one-to-many mapping for orderid
@@ -22,6 +23,8 @@ public class Orders {
 	private Date orderDate;
 	@Column
 	private String orderStatus;
+	
+	private Set<OrderContents> orderContents;
 	
 	public Orders(int orderID, int customer, double total, Date orderDate, String orderStatus) {
 		super();
@@ -80,6 +83,14 @@ public class Orders {
 	public String toString() {
 		return "Orders [orderID=" + orderID + ", customer=" + customer + ", total=" + total + ", orderDate=" + orderDate
 				+ ", orderStatus=" + orderStatus + "]";
+	}
+
+	public Set<OrderContents> getOrderContents() {
+		return orderContents;
+	}
+
+	public void setOrderContents(Set<OrderContents> orderContents) {
+		this.orderContents = orderContents;
 	}
 	
 	
