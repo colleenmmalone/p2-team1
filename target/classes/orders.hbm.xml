@@ -15,6 +15,10 @@
       <property name = "total" column = "total" type = "double"/>
       <property name = "orderDate" column = "orderdate" type = "date"/>
       <property name = "orderStatus" column = "orderstatus" type = "string"/>
+      <set name="orderContents" inverse="true" cascade="all">
+      	<key column = "orderid"/>
+      	<one-to-many class="com.p2.model.OrderContents"/>
+       </set>
       
    </class>
 
