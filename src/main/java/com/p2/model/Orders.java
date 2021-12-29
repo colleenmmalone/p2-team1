@@ -6,8 +6,13 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
 // one order can have many order contents. Use one-to-many mapping for orderid
 
+@Data
+@NoArgsConstructor
 @Entity
 @Table
 public class Orders {
@@ -34,65 +39,5 @@ public class Orders {
 		this.orderDate = orderDate;
 		this.orderStatus = orderStatus;
 	}
-	
-	public Orders() {
-		super();
-	}
-
-	public int getOrderID() {
-		return orderID;
-	}
-
-	public void setOrderID(int orderID) {
-		this.orderID = orderID;
-	}
-
-	public int getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(int customer) {
-		this.customer = customer;
-	}
-
-	public double getTotal() {
-		return total;
-	}
-
-	public void setTotal(double total) {
-		this.total = total;
-	}
-
-	public Date getOrderDate() {
-		return orderDate;
-	}
-
-	public void setOrderDate(Date orderDate) {
-		this.orderDate = orderDate;
-	}
-
-	public String getOrderStatus() {
-		return orderStatus;
-	}
-
-	public void setOrderStatus(String orderStatus) {
-		this.orderStatus = orderStatus;
-	}
-
-	@Override
-	public String toString() {
-		return "Orders [orderID=" + orderID + ", customer=" + customer + ", total=" + total + ", orderDate=" + orderDate
-				+ ", orderStatus=" + orderStatus + "]";
-	}
-
-	public Set<OrderContents> getOrderContents() {
-		return orderContents;
-	}
-
-	public void setOrderContents(Set<OrderContents> orderContents) {
-		this.orderContents = orderContents;
-	}
-	
-	
 
 }
