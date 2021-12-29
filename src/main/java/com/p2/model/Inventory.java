@@ -1,13 +1,17 @@
 package com.p2.model;
 import javax.persistence.*;
-@Entity
-@Table
 
+
+@Entity
+@Table(name="inventory")
 public class Inventory {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue
+	@Column
 	private int itemID;
+	@Column
 	private String items;
+	@Column
 	private int quantity;
 	
 	public Inventory(int itemID, String items, int quantity) {

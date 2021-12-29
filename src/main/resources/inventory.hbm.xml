@@ -4,18 +4,17 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name = "com.p2.model.OrderContents" table = "orderContents">
+   <class name = "com.p2.model.Inventory" table = "inventory">
 
       
       <id name = "itemID" type = "int" column = "itemid">
          <generator class="native"/>
       </id>
       
-      <property name = "orderID" column = "orderid" type = "int"/>
-      <property name = "item" column = "item" type = "string"/>
-      <property name = "price" column = "price" type = "double"/>
+      <property name = "items" column = "items" type = "string"/>
       <property name = "quantity" column = "quantity" type = "int"/>
-      
+    
+   
    </class>
 
    
