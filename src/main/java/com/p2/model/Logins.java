@@ -95,7 +95,7 @@ public class Logins {
 
 	@Override
 	public String toString() {
-		return "Logins [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+		return "\nLogins [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", pswd=" + pswd + ", status=" + status + "]";
 	}
 	

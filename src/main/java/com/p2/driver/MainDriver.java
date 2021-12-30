@@ -30,12 +30,6 @@ public class MainDriver {
 		public static void main(String[] args) {
 			SpringApplication.run(MainDriver.class, args);
 
-				//this would be inside a controller.....
-			
-//					session = HibernateSessFact.getSession();
-//					List<Logins> results = LoginsDAO.getAllLogins(session);
-//					System.out.println(results);
-//					session.close();
 			
 				// insert function fully working and mapped
 //					Orders order = new Orders();
@@ -53,39 +47,9 @@ public class MainDriver {
 //					order.setOrderContents(ordercontents);
 //					
 //					orderContentDao.save(order);
-//					
-//					session = HibernateSessFact.getSession(); //retrieve session from session factory util
-//					List listLogins = LoginsDAO.getAllLogins(session); //get results from Hibernate method, returned as List object
-//			//		System.out.println(listLogins);
-//					session.close(); //be sure to close session when done 
-//		
-//
-				session = HibernateSessFact.getSession(); //retrieve session from session factory util
-//					 listLogins = LoginsDAO.getLoginByID(session, 2); //get results from Hibernate method, returned as List object
-//					System.out.println( listLogins);
-//					
-//					 listLogins = LoginsDAO.getLoginByEmail(session, "cs1"); //get results from Hibernate method, returned as List object
-//						System.out.println( listLogins);
-//					session.close(); //be sure to close session when done 
-//		
-//			Logins nu = new Logins("Fondant", "Funnelly", "cs3", "cs3", "CUSTOMER");
-//			LoginsDAO.newLogin(nu);
-			
-			Logins hi = LoginsDAO.login("cs2", "cs2");
-			System.out.println(hi.getFirstName());
-			if(hi.getStatus().equals("CUSTOMER")) {
-				//render Customer view
-				System.out.println("Customer is logged in");
-			}else if(hi.getStatus().equals("EMPLOYEE")) {
-				//render Employee view
-				System.out.println("Employee is logged in");
-			} else {
-				//redirect back to login
-				System.out.println("This user does not appear to be a valid user");
-			}
-			
-			
-			
+	
+			//I wrote this method in LoginsDAO to avoid clogging up the main driver
+			LoginsDAO.colleenLoginMethodTesting();
 			
 			/*
 			Inventory inventory = new Inventory(1,"cheesecake",25);
