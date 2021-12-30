@@ -7,6 +7,8 @@ import java.util.Set;
 import org.hibernate.Session;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.p2.dao.LoginsDAO;
 import com.p2.dao.OrderContentsDAO;
@@ -19,6 +21,7 @@ import com.p2.model.Inventory;
 import com.p2.util.HibernateSessFact;
 
 @SpringBootApplication
+
 public class MainDriver {
 	static Session session;
 	static Integer results;
@@ -38,12 +41,4 @@ public class MainDriver {
 //					System.out.println(results);
 //					session.close(); //be sure to close session when done 
 		
-			
-			OrderContentsDAO orderContentDao = new OrderContentsDAO();
-			OrderContents orderContents = new OrderContents();
-			orderContents.setItem("SomeTypeOfCakeForTest?");
-			orderContents.setPrice(50);
-			orderContents.setQuantity(1);
-			orderContentDao.addToExistingOrder(70, orderContents);
-		}
 }
