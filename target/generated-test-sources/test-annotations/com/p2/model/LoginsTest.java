@@ -1,18 +1,18 @@
 package com.p2.model;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class LoginsTest {
 		static Logins l, m, n;
 
 
-		@BeforeClass
+		@BeforeAll
 		public static void setUpBeforeClass() throws Exception {
 			l = new Logins("first", "last", "em", "pswd", "status");
 			m = new Logins(2,"first", "last", "em", "pswd", "status");
@@ -46,7 +46,7 @@ public class LoginsTest {
 		@Test
 		public void testId() {
 			l.setId(2);
-			assertEquals(l.getStatus(), 2);
+			assertEquals(l.getId(), 2);
 		}
 		
 		@Test

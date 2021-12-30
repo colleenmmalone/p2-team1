@@ -25,5 +25,9 @@ public class HibernateSessFact {
 
 		return session; // return current session to DAO or controller
 	}
+	
+	public HibernateSessFact() {
+		super();
+	}
 
 }
