@@ -1,5 +1,11 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: Carter
 Build-Jdk: 17
+=======
+Build-Jdk-Spec: 17
+Implementation-Title: P2-Team1
+Implementation-Version: 0.0.1-SNAPSHOT
+>>>>>>> origin/main
 Created-By: Maven Integration for Eclipse
 
