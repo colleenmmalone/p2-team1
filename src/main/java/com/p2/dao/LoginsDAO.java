@@ -51,7 +51,7 @@ public class LoginsDAO {
 		
 	}
 
-	static public Logins login(String email, String pswd) { // login a user
+	static public Logins login(String email, String pswd)  { // login a user
 		Session session = HibernateSessFact.getSession();
 		Transaction transaction = session.beginTransaction();
 		Logins l = getLoginByEmail(email);
@@ -84,7 +84,7 @@ public class LoginsDAO {
 		return newUser;
 	}
 
-	static public void deleteLoginByID(int id) { // delete user by id
+	static public void deleteLoginByID(int id){ // delete user by id
 		Session session = HibernateSessFact.getSession();
 		Transaction transaction = session.beginTransaction();
 		String queryStr = "delete from Logins where id =:id";
