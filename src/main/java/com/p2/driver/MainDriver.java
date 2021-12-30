@@ -38,14 +38,12 @@ public class MainDriver {
 //					System.out.println(results);
 //					session.close(); //be sure to close session when done 
 		
-//			Inventory inventory = new Inventory(1,"cheesecake",25);
-//			InventoryDAO inventoryDAO = new InventoryDAO();
-//			inventoryDAO.updateInventory(inventory);
-//			Inventory inventory = new Inventory();
-//			InventoryDAO inventoryDAO = new InventoryDAO();
-//			inventoryDAO.trying();
-//			InventoryDAO inventoryDao = new InventoryDAO();
-//			System.out.println(inventoryDao.updateInventory());
 			
+			OrderContentsDAO orderContentDao = new OrderContentsDAO();
+			OrderContents orderContents = new OrderContents();
+			orderContents.setItem("SomeTypeOfCakeForTest?");
+			orderContents.setPrice(50);
+			orderContents.setQuantity(1);
+			orderContentDao.addToExistingOrder(70, orderContents);
 		}
 }
