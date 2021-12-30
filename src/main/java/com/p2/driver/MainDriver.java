@@ -10,6 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import com.p2.dao.LoginsDAO;
 import com.p2.dao.OrderContentsDAO;
 import com.p2.model.OrderContents;
@@ -29,16 +31,20 @@ public class MainDriver {
 		public static void main(String[] args) {
 			SpringApplication.run(MainDriver.class, args);
 
-				//this would be inside a controller.....
-//					session = HibernateSessFact.getSession();
-//					results = LoginsDAO.getAllLogins(session);
-//					System.out.println(results);
-//					session.close();
+	
+			//I wrote this method in LoginsDAO to avoid clogging up the main driver
+			LoginsDAO.colleenLoginMethodTesting();
 			
-					
-//					session = HibernateSessFact.getSession(); //retrieve session from session factory util
-//					results = LoginsDAO.getAllLogins(session); //get results from Hibernate method, returned as List object
-//					System.out.println(results);
-//					session.close(); //be sure to close session when done 
-		
+			/*
+			Inventory inventory = new Inventory(1,"cheesecake",25);
+			InventoryDAO inventoryDAO = new InventoryDAO();
+			inventoryDAO.updateInventory(inventory);
+//			*/
+//			Inventory inventory = new Inventory();
+//			InventoryDAO inventoryDAO = new InventoryDAO();
+//			inventoryDAO.trying();
+//			
+			
+
+		}
 }
