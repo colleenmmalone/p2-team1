@@ -78,17 +78,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-<<<<<<< HEAD
-		
+		</dependency>		
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
-=======
+
 
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 		</dependency>
->>>>>>> origin/main
+
         
         <!-- lombok -->
         <dependency>
