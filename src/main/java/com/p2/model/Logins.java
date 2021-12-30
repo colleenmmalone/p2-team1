@@ -31,6 +31,16 @@ public class Logins {
 		this.status = status;
 	}
 	
+	public Logins(String firstName, String lastName, String email, String pswd, String status) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.pswd = pswd;
+		this.status = status;
+	}
+	
 	public Logins() {
 		super();
 	}
@@ -85,7 +95,7 @@ public class Logins {
 
 	@Override
 	public String toString() {
-		return "Logins [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+		return "\nLogins [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", pswd=" + pswd + ", status=" + status + "]";
 	}
 	
