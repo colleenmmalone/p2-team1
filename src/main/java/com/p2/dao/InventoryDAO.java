@@ -11,12 +11,12 @@ import javax.persistence.Query;
 import org.hibernate.*;
 
 public class InventoryDAO {
-	/* 
+	
 	public int updateInventory(Inventory inventory) {
 			
 		   Session session = HibernateSessFact.getSession();
 			Transaction tx = session.beginTransaction();	
-			Query query = session.createQuery("update inventory\r\n"
+			Query query = session.createSQLQuery("update inventory\r\n"
 					+ "set quantity= "+ inventory.getQuantity() +"\r\n"
 					+ "where itemid= "+ inventory.getItemID() );  
 			int rowCount = query.executeUpdate();
@@ -24,22 +24,27 @@ public class InventoryDAO {
 			tx.commit();
 			session.close();
 			return rowCount;
+			
+
 		}
-	*/
+	
 
 	public List<Inventory> trying() {
 	   Session session = HibernateSessFact.getSession();
-	//	Query results = session.createQuery(" from Inventory");
-		return session.createQuery("From Inventory", Inventory.class).list();
-
-	//	System.out.println("Rows affected:" + );
-	
-	//	session.close();
+	   String hql = " from Inventory"; //prepared statement
+	   Query query = session.createQuery(hql);
+	   List<Inventory> results ;           //creating a list of inventory
+	   results = session.createCriteria(Inventory.class).list();
 		
-	
+	   System.out.println(results);
+		return results;
 	
 	}
+	
+
+	
 }
+
 			 
 	
 	

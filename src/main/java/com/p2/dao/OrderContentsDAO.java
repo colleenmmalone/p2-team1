@@ -12,7 +12,7 @@ import com.p2.util.HibernateSessFact;
 
 public class OrderContentsDAO {
 
-	// method to add items into cart
+	// method to add items into cart 
 	// save current entity
 	public void save(Orders order) {
 		Session session = HibernateSessFact.getSession();
@@ -23,7 +23,7 @@ public class OrderContentsDAO {
 		// will need catch statement
 	}
 
-	// delete an order based on id
+	// delete an order based on id  //delete an item from cart?
 	public boolean deleteOrder(int id) {
 		Session session = HibernateSessFact.getSession();
 		Transaction transaction = session.beginTransaction();

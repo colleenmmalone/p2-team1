@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-<<<<<<< HEAD:src/main/resources/inventory.hbm.xml
+
    <class name = "com.p2.model.Inventory" table = "inventory">
 
       
@@ -15,22 +15,7 @@
     
    
    </class>
-=======
-	<class name="com.p2.model.OrderContents" table="ordercontents">
 
 
-		<id name="orderContentsId" type="int" column="ordercontentsid">
-			<generator class="identity" />
-		</id>
-
-		<property name="orderID" insert="false" update="false" column="orderID" type="int"/>
-		<property name="item" column="item" type="string" />
-		<property name="price" column="price" type="double" />
-		<property name="quantity" column="quantity" type="int" />
-		<many-to-one class="com.p2.model.Orders" column="orderid" name="orders" not-null="true" />
-
-	</class>
-
->>>>>>> origin/main:target/classes/ordercontents.hbm.xml
 
 </hibernate-mapping>

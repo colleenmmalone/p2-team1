@@ -1,13 +1,16 @@
 package com.p2.model;
 
+import java.util.Set;
+
 import javax.persistence.*;
+//one to many between logins and orders
 
 @Entity
 @Table(name="logins")
 public class Logins {
 	@Id
 	@GeneratedValue
-	@Column
+	@Column(name = "id")
 	private int id;
 	@Column
 	private String firstName;
@@ -20,8 +23,10 @@ public class Logins {
 	@Column
 	private String status;
 	//status is either EMPLOYEE or CUSTOMER
-	
-	public Logins(int id, String firstName, String lastName, String email, String pswd, String status) {
+	  @OneToOne(cascade = CascadeType.ALL)
+	    @JoinColumn(name = "id", referencedColumnName = "customer")
+	private Orders orders ;
+	public Logins(int id, String firstName, String lastName, String email, String pswd, String status, Orders orders) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -29,6 +34,7 @@ public class Logins {
 		this.email = email;
 		this.pswd = pswd;
 		this.status = status;
+		this.orders= orders;
 	}
 	
 	public Logins() {
@@ -78,10 +84,19 @@ public class Logins {
 	public String getStatus() {
 		return status;
 	}
-
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	public Orders getOrders() {
+		return orders;
+	}
+
+	public void setOrders(Orders orders) {
+		this.orders = orders;
+	}
+
+	
 
 	@Override
 	public String toString() {

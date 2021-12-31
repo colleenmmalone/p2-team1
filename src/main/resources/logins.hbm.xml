@@ -16,7 +16,9 @@
       <property name = "email" column = "email" type = "string"/>
       <property name = "pswd" column = "pswd" type = "string"/>
       <property name = "status" column = "status" type = "string"/>
-      
+        <one-to-one name="orders" class="com.p2.model.Orders"
+			cascade="save-update"></one-to-one>
+
    </class>
 
    

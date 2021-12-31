@@ -7,9 +7,10 @@ import java.util.Set;
 
 import javax.persistence.*;
 // one order can have many order contents. Use one-to-many mapping for orderid
+//many to many between orders and ordercontents
 
 @Entity
-@Table
+@Table (name = "orders")
 public class Orders {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,17 +25,34 @@ public class Orders {
 	@Column
 	private String orderStatus;
 	
+	@OneToOne(mappedBy = "orders")
+	private Logins logins;
+//	@ManyToMany(targetEntity = OrderContents.class, cascade = {CascadeType.ALL})
+	@ManyToMany(targetEntity = OrderContents.class, cascade = {CascadeType.ALL})
+	@JoinTable (name = "Orders_OrderContents")
+ @JoinColumn(name = "orderid")
+	
 	private Set<OrderContents> orderContents;
 	
-	public Orders(int orderID, int customer, double total, Date orderDate, String orderStatus) {
+	public Orders(int orderID, int customer, double total, Date orderDate, String orderStatus, Logins logins, Set<OrderContents> orderContents) {
 		super();
 		this.orderID = orderID;
 		this.customer = customer;
 		this.total = total;
 		this.orderDate = orderDate;
 		this.orderStatus = orderStatus;
+		this.logins = logins;
+		this.orderContents = orderContents;
 	}
-	
+
+	public Logins getLogins() {
+		return logins;
+	}
+
+	public void setLogins(Logins logins) {
+		this.logins = logins;
+	}
+
 	public Orders() {
 		super();
 	}

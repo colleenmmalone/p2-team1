@@ -10,17 +10,16 @@
       <id name = "orderID" type = "int" column = "orderid">
          <generator class="native"/>
       </id>
-      
-      <property name = "customer" column = "customer" type = "int"/>
+		
       <property name = "total" column = "total" type = "double"/>
       <property name = "orderDate" column = "orderdate" type = "date"/>
       <property name = "orderStatus" column = "orderstatus" type = "string"/>
-      <set name="orderContents" inverse="true" cascade="all">
-      	<key column = "orderid"/>
-      	<one-to-many class="com.p2.model.OrderContents"/>
-       </set>
-      
+     
+           <one-to-one name="logins" class="com.p2.model.Logins"
+			cascade="save-update"></one-to-one>
    </class>
 
-   
+    
 </hibernate-mapping>
+
+      

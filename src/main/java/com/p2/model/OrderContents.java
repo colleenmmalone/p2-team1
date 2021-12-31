@@ -1,6 +1,9 @@
 package com.p2.model;
 
+import java.util.Set;
+
 import javax.persistence.*;
+//many to many between orders and ordercontents
 
 @Entity
 @Table(name = "ordercontents")
@@ -16,13 +19,23 @@ public class OrderContents {
 	@Column
 	private double price;
 	
-	private Orders orders;
+	@ManyToMany (mappedBy = "ordercontents")
+	Set<Orders> orders;
 
-	public OrderContents(int quantity, String item, double price, Orders orders ) {
+	public OrderContents(int quantity, String item, double price, Set<Orders> orders) {
 		super();
 		this.quantity = quantity;
 		this.item = item;
 		this.price = price;
+		this.orders = orders;
+	}
+
+
+	public Set<Orders> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(Set<Orders> orders) {
 		this.orders = orders;
 	}
 
@@ -69,13 +82,13 @@ public class OrderContents {
 		this.price = price;
 	}
 	
-	public Orders getOrders() {
+/*	public Orders getOrders() {
 		return orders;
 	}
 	
 	public void setOrders(Orders orders) {
 		this.orders = orders;
-	}
+	} */
 
 	@Override
 	public String toString() {
