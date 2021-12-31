@@ -5,7 +5,7 @@
 	<class name="com.p2.model.OrderContents" table="ordercontents">
 
 
-		<id name="orderContentsId" type="int" column="ordercontentsid">
+		<id name="orderContentsId" type="int" column="order_contents_id">
 			<generator class="identity" />
 		</id>
 
@@ -13,7 +13,7 @@
 		<property name="item" column="item" type="string" />
 		<property name="price" column="price" type="double" />
 		<property name="quantity" column="quantity" type="int" />
-		<many-to-one class="com.p2.model.Orders" column="orderid" name="orders" not-null="true" />
+		<many-to-one class="com.p2.model.Orders" column="orderid" name="orders" not-null="true" cascade="all" />
 
 	</class>
 
