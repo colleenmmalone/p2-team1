@@ -21,6 +21,7 @@ import com.p2.model.Orders;
 import com.p2.dao.InventoryDAO;
 import com.p2.dao.LoginsDAO;
 import com.p2.model.Inventory;
+import com.p2.model.Logins;
 import com.p2.util.HibernateSessFact;
 
 @SpringBootApplication
@@ -31,24 +32,27 @@ public class MainDriver {
 
 		public static void main(String[] args) {
 			SpringApplication.run(MainDriver.class, args);
-
 			Orders order = new Orders();
+			order.setOrderID(1);
 			order.setCustomer(1);
 			order.setOrderStatus("pending");
-			order.setTotal(10);
+			order.setTotal(120);
 			
 			OrderContentsDAO orderContentDao = new OrderContentsDAO();
-			OrderContents orderContents1 = new OrderContents(5, "Blueberry", 59, order);
-			OrderContents orderContents2 = new OrderContents(10, "Blueberry1", 59, order);
+			//OrderContents orderContents1 = new OrderContents(5, "Blueberry", 59, order);
+			OrderContents orderContents2 = new OrderContents();
+			orderContents2.setItem("blueberryTest");
+			orderContents2.setPrice(10);
+			orderContents2.setQuantity(5);
+			orderContents2.setOrders(order);
 
 			Set<OrderContents> ordercontents = new HashSet<OrderContents>();
-			ordercontents.add(orderContents1);
 			ordercontents.add(orderContents2);
+			Session session = HibernateSessFact.getSession();
+			session.beginTransaction();
 			order.setOrderContents(ordercontents);
-			
 			orderContentDao.addOrderContents(order);
-		
-			
+		//	orderContentDao.addOrderContents(order);
 			//I wrote this method in LoginsDAO to avoid clogging up the main driver
 			//LoginsDAO.colleenLoginMethodTesting();
 			

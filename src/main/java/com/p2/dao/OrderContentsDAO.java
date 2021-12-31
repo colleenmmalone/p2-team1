@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.p2.model.Logins;
 import com.p2.model.OrderContents;
 import com.p2.model.Orders;
 import com.p2.util.HibernateSessFact;
@@ -14,12 +15,12 @@ public class OrderContentsDAO {
 
 	// method to add items into cart
 	// save current entity
-	public int addOrderContents(Orders orders) {
+	public int addOrderContents(Orders order) {
 		int result = 0;
 		try {
 			Session session = HibernateSessFact.getSession();
 			session.beginTransaction();
-			session.save(orders);
+			session.save(order);
 			session.getTransaction().commit();
 			session.close();
 			result = 1;
@@ -76,7 +77,7 @@ public class OrderContentsDAO {
 			Orders orders = session.load(Orders.class, orderid);
 			OrderContents newOrderContents = new OrderContents();
 			newOrderContents.setItem(orderContents.getItem());
-			//newOrderContents.setOrderID(orderid);
+			newOrderContents.setOrderID(orderid);
 			newOrderContents.setPrice(orderContents.getPrice());
 			newOrderContents.setQuantity(orderContents.getQuantity());
 			newOrderContents.setOrders(orders);

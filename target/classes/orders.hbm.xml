@@ -8,10 +8,10 @@
 
       
       <id name = "orderID" type = "int" column = "orderid">
-         <generator class="identity"/>
+         <generator class="native"/>
       </id>
       
-      <property name = "customer" column = "customer" type = "int"/>
+      <property name = "customer" column = "customer" type="int"/>
       <property name = "total" column = "total" type = "double"/>
       <property name = "orderDate" column = "order_date" type = "date"/>
       <property name = "orderStatus" column = "order_status" type = "string"/>
@@ -19,6 +19,7 @@
       	<key column = "orderid"/>
       	<one-to-many class="com.p2.model.OrderContents"/>
        </set>
+      
       
    </class>
 

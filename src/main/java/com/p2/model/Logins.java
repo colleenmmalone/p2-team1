@@ -1,5 +1,7 @@
 package com.p2.model;
 
+import java.util.Set;
+
 import javax.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,5 +33,6 @@ public class Logins {
 	private String status;
 	//status is either EMPLOYEE or CUSTOMER
 	
+	private Set<Orders> orders;
 
 }

@@ -41,6 +41,7 @@ public class Orders {
 		this.orderDate = orderDate;
 		this.orderStatus = orderStatus;
 	}
+
 	
 	public Set<OrderContents> getOrderContents() {
 		return this.orderContents;
@@ -48,6 +49,11 @@ public class Orders {
 	
 	public void setOrderContents(Set<OrderContents> orderContents) {
 		this.orderContents = orderContents;
+	}
+
+
+	public Orders(int orderID2, int customer2, String string, int i, String orderStatus2) {
+		// TODO Auto-generated constructor stub
 	}
 
 }
