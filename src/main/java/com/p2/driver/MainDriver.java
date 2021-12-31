@@ -32,10 +32,22 @@ public class MainDriver {
 		public static void main(String[] args) {
 			SpringApplication.run(MainDriver.class, args);
 
-			OrdersDAO orderDao = new OrdersDAO();
-			OrderContentsDAO odc = new OrderContentsDAO();
-			OrderContents item = new OrderContents(5, "Matcha Cake", 50);
-			System.out.println(odc.addToExistingOrderContents(1, null));
+			Orders order = new Orders();
+			order.setCustomer(1);
+			order.setOrderStatus("pending");
+			order.setTotal(10);
+			
+			OrderContentsDAO orderContentDao = new OrderContentsDAO();
+			OrderContents orderContents1 = new OrderContents(5, "Blueberry", 59, order);
+			OrderContents orderContents2 = new OrderContents(10, "Blueberry1", 59, order);
+
+			Set<OrderContents> ordercontents = new HashSet<OrderContents>();
+			ordercontents.add(orderContents1);
+			ordercontents.add(orderContents2);
+			order.setOrderContents(ordercontents);
+			
+			orderContentDao.addOrderContents(order);
+		
 			
 			//I wrote this method in LoginsDAO to avoid clogging up the main driver
 			//LoginsDAO.colleenLoginMethodTesting();

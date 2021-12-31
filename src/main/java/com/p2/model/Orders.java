@@ -41,5 +41,13 @@ public class Orders {
 		this.orderDate = orderDate;
 		this.orderStatus = orderStatus;
 	}
+	
+	public Set<OrderContents> getOrderContents() {
+		return this.orderContents;
+	}
+	
+	public void setOrderContents(Set<OrderContents> orderContents) {
+		this.orderContents = orderContents;
+	}
 
 }
