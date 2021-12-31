@@ -10,12 +10,10 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table
 public class CreditCards {
-	@Id
+	@Id 
 	private int cardID;
 	private long cardNum;
 	private int holderID, cvc;
 	private String holderName, expDate;
-	
-	
 
 }

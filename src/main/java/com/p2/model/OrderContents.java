@@ -35,4 +35,15 @@ public class OrderContents {
 		this.orders = orders;
 	}
 
+	public OrderContents(int i, String string, int j) {
+		// TODO Auto-generated constructor stub
+	}
+	
+//	public OrderContents(int quantity, String item, double price) {
+//		super();
+//		this.quantity = quantity;
+//		this.item = item;
+//		this.price = price;
+//	}
+
 }

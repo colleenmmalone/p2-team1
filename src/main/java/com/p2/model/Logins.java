@@ -9,6 +9,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="logins")
 public class Logins {
+	public Logins(String string, String string2, String string3, String string4, String string5) {
+		// TODO Auto-generated constructor stub
+	}
+	public Logins(int i, String string, String string2, String string3, String string4, String string5) {
+		// TODO Auto-generated constructor stub
+	}
 	@Id
 	@GeneratedValue
 	@Column
