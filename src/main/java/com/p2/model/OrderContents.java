@@ -2,6 +2,14 @@ package com.p2.model;
 
 import javax.persistence.*;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@NoArgsConstructor
+@EqualsAndHashCode(exclude="orders")
 @Entity
 @Table(name = "ordercontents")
 public class OrderContents {
@@ -16,6 +24,7 @@ public class OrderContents {
 	@Column
 	private double price;
 	
+	@ToString.Exclude
 	private Orders orders;
 
 	public OrderContents(int quantity, String item, double price, Orders orders ) {
@@ -26,61 +35,15 @@ public class OrderContents {
 		this.orders = orders;
 	}
 
-	public OrderContents() {
-	}
-
-	public int getOrderContentsId() {
-		return orderContentsId;
-	}
-
-	public void setOrderContentsId(int orderContentsId) {
-		this.orderContentsId = orderContentsId;
-	}
-
-	public int getOrderID() {
-		return orderID;
-	}
-
-	public void setOrderID(int orderID) {
-		this.orderID = orderID;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
-	public String getItem() {
-		return item;
-	}
-
-	public void setItem(String item) {
-		this.item = item;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
+	public OrderContents(int i, String string, int j) {
+		// TODO Auto-generated constructor stub
 	}
 	
-	public Orders getOrders() {
-		return orders;
-	}
-	
-	public void setOrders(Orders orders) {
-		this.orders = orders;
-	}
-
-	@Override
-	public String toString() {
-		return "OrderContents [itemID=" + orderContentsId + ", orderID=" + orderID + ", quantity=" + quantity + ", item=" + item
-				+ ", price=" + price + "]";
-	}
+//	public OrderContents(int quantity, String item, double price) {
+//		super();
+//		this.quantity = quantity;
+//		this.item = item;
+//		this.price = price;
+//	}
 
 }
