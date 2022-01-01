@@ -21,6 +21,7 @@ import com.p2.model.Orders;
 import com.p2.dao.InventoryDAO;
 import com.p2.dao.LoginsDAO;
 import com.p2.model.Inventory;
+import com.p2.model.Logins;
 import com.p2.util.HibernateSessFact;
 
 @SpringBootApplication
@@ -30,6 +31,7 @@ public class MainDriver {
 
 		public static void main(String[] args) {
 			SpringApplication.run(MainDriver.class, args);
+<<<<<<< HEAD
 
 //			OrdersDAO orderDao = new OrdersDAO();
 //			OrderContentsDAO odc = new OrderContentsDAO();
@@ -39,6 +41,8 @@ public class MainDriver {
 			//I wrote this method in LoginsDAO to avoid clogging up the main driver
 			LoginsDAO.colleenLoginMethodTesting();
 			
+=======
+>>>>>>> origin/springjpaworkingbranch
 			/*
 			Inventory inventory = new Inventory(1,"cheesecake",25);
 			InventoryDAO inventoryDAO = new InventoryDAO();

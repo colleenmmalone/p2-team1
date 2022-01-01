@@ -11,7 +11,7 @@
          <generator class="native"/>
       </id>
       
-      <property name = "customer" column = "customer" type = "int"/>
+      <property name = "customer" column = "customer" type="int"/>
       <property name = "total" column = "total" type = "double"/>
       <property name = "orderDate" column = "orderdate" type = "date"/>
       <property name = "orderStatus" column = "orderstatus" type = "string"/>
@@ -19,7 +19,12 @@
       	<key column = "orderid"/>
       	<one-to-many class="com.p2.model.OrderContents"/>
        </set>
+<<<<<<< HEAD
       <many-to-one class="com.p2.model.Logins" column="customer" name="user" not-null="true" cascade="all" insert="false" update="false"/>
+=======
+      
+      
+>>>>>>> origin/springjpaworkingbranch
    </class>
 
    
