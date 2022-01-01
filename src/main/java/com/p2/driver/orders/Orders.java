@@ -7,6 +7,8 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.p2.driver.logins.Logins;
 import com.p2.driver.ordercontents.OrderContents;
 
 import lombok.Data;
@@ -23,7 +25,7 @@ public class Orders {
 	@GeneratedValue
 	@Column(name="orderid")
 	private int orderID;
-	@Column(name="customer")
+	@Column(name="customer", insertable=false, updatable=false)
 	private int customer;
 	@Column(name="total")
 	private double total;
@@ -35,6 +37,12 @@ public class Orders {
 	@ToString.Exclude
 	@OneToMany(mappedBy="orders", fetch = FetchType.LAZY, cascade= CascadeType.ALL)
 	private List<OrderContents> orderContents;
+	
+	@ToString.Exclude
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="customer", nullable=false)
+	@JsonIgnore
+	private Logins logins;
 	
 	public Orders(int orderID, int customer, double total, Date orderDate, String orderStatus) {
 		super();

@@ -59,10 +59,8 @@ public class OrderContentsController {
 	
 	@PutMapping
 	public void updateOrderContents(@PathVariable(value = "id") int id, @RequestBody OrderContents orderContents) {
-		
+		orderContentsService.updateExistingOrderContents(orderContents, id);
 		
 	}
-	
-	
 
 }
