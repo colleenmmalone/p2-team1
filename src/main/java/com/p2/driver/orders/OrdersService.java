@@ -48,5 +48,14 @@ public class OrdersService {
 		ordersRepository.save(orderFromDb);
 		
 	}
+	
+	// update order status || id refers to order id
+	public void updateOrderStatus(String status, int id) {
+		Orders ordersFromDb = ordersRepository.findById(id).get();
+		// can probably handle status value on front end ex. pending, done, not valid
+		ordersFromDb.setOrderStatus(status);
+		ordersRepository.save(ordersFromDb);
+		
+	}
 
 }

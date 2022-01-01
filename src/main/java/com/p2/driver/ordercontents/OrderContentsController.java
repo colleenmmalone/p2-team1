@@ -57,10 +57,26 @@ public class OrderContentsController {
 		orderContentsService.add(orderContents);
 	}
 	
+	//This method updates all parameters
 	@PutMapping("/updateordercontents/{id}")
 	public void updateOrderContents(@PathVariable(value = "id") int id, @RequestBody OrderContents orderContents) {
 		orderContentsService.updateExistingOrderContents(orderContents, id);
 		
 	}
+	
+	//This method updates only the quantity || Ex. updating quantity of order contents based on id
+	@PutMapping("/updateordercontents/quantity={quantity}/{id}")
+	public void updateQuantity(@PathVariable(value = "quantity") int quantity, @PathVariable(value="id") int id) {
+		orderContentsService.updateQuantity(quantity, id);
+	}
+	
+	
+	//This method updates price based on id
+	@PutMapping("/updateordercontents/price={price}/{id}")
+	public void updatePrice(@PathVariable(value = "price") int price, @PathVariable(value="id") int id) {
+		orderContentsService.updatePrice(price, id);
+	}
+	
+	
 
 }

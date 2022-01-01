@@ -58,6 +58,11 @@ public class OrdersController {
 		ordersService.updateOrders(orders, id);
 	}
 	
+	@PutMapping("/updateorder/status={status}/{id}")
+	public void updateOrderStatus(@PathVariable String status, @PathVariable(value="id") int id) {
+		ordersService.updateOrderStatus(status, id);
+	}
+	
 	
 
 }
