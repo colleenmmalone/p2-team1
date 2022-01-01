@@ -2,10 +2,10 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.p2.model.OrderContents" table="ordercontents">
+	<class name="com.p2.driver.ordercontents.OrderContents" table="ordercontents">
 
 
-		<id name="orderContentsId" type="int" column="ordercontentsid">
+		<id name="ordercontentsid" type="int" column="ordercontentsid">
 			<generator class="identity" />
 		</id>
 
@@ -13,7 +13,7 @@
 		<property name="item" column="item" type="string" />
 		<property name="price" column="price" type="double" />
 		<property name="quantity" column="quantity" type="int" />
-		<many-to-one class="com.p2.model.Orders" column="orderid" name="orders" not-null="true" cascade="all" />
+		<many-to-one class="com.p2.driver.orders.Orders" column="orderid" name="orders" not-null="true" cascade="all" />
 
 	</class>
 

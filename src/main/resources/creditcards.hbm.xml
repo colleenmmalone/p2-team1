@@ -4,7 +4,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name = "com.p2.model.CreditCards" table = "creditcards">
+   <class name = "com.p2.driver.creditcards.CreditCards" table = "creditcards">
 
       
       <id name = "cardID" type = "int" column = "cardid">
