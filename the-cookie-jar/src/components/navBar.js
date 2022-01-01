@@ -11,8 +11,9 @@ export default function NavBar() {
   );
 }
 
-
+/*
 function title(){
     var head = document.getElementById("pageTitle");
     head.innerHTML = "hello";
 }
+*/

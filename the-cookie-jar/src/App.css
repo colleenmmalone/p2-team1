@@ -24,18 +24,18 @@
   color: white;
 }
 
-#pageTitle {
-  background-color: #282c34;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+#storeTitle {
+  background-color: pink;
+  color: rgb(201, 37, 105);
+  font-family: "Hearts-Title";
+  font-size: 70px;
 }
 
 #navBar{
   background-color: #61dafb;
   width: 95%;
-  justify: center;
+  padding: 5px;
+  margin: 5px;
 }
 
 .App-link {
@@ -49,4 +49,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face{
+  font-family: "Hearts-Title";
+  src: url(fonts/quirky-love-font/QuirkyLovePersonalUseRegular-RpwrM.ttf);
 }
