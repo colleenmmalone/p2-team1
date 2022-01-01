@@ -1,15 +1,17 @@
-package com.p2.driver;
+package com.p2.driver.inventory;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
+@Data
+@NoArgsConstructor
+
+@Entity
+@Table(name="inventory")
 public class Inventory {
 
 	
-	@Data
-	@NoArgsConstructor
-	@Entity
-	@Table(name="inventory")
+
 	
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +21,6 @@ public class Inventory {
 		@Column(name="quantity")
 		private int quantity;
 		
-		@ToString.Exclude
+		
 	
 }
