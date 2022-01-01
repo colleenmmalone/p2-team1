@@ -1,10 +1,9 @@
-package com.p2.driver.controller;
+package com.p2.driver.orders;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
-public interface OrderContentRepository extends JpaRepository<OrderContents, Integer>{
+public interface OrdersRepository extends JpaRepository<Orders, Integer>{
 
 }

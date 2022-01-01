@@ -1,4 +1,4 @@
-package com.p2.driver.controller;
+package com.p2.driver.ordercontents;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderContentsResource {
 	
 	@Autowired
-	private OrderContentRepository orderContentRepository;
+	private OrderContentsRepository orderContentRepository;
 	
-	@GetMapping("/orders")
+	@GetMapping("/orderContents")
 	public List<OrderContents> retrieveOrderContents() {
 		return orderContentRepository.findAll();
 	}

@@ -1,7 +1,8 @@
-package com.p2.driver.controller;
+package com.p2.driver.ordercontents;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.p2.driver.orders.Orders;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
