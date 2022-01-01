@@ -40,11 +40,11 @@ public class OrdersService {
 	}
 	
 	// updates existing order
-	public void updateOrders(Orders updateOrders) {
-		Orders orderFromDb = ordersRepository.findById(updateOrders.getOrderID()).get();
-		orderFromDb.setOrderDate(updateOrders.getOrderDate());
-		orderFromDb.setOrderStatus(updateOrders.getOrderStatus());
-		orderFromDb.setTotal(updateOrders.getTotal());
+	public void updateOrders(Orders orders, int id) {
+		Orders orderFromDb = ordersRepository.findById(id).get();
+		orderFromDb.setOrderDate(orders.getOrderDate());
+		orderFromDb.setOrderStatus(orders.getOrderStatus());
+		orderFromDb.setTotal(orders.getTotal());
 		ordersRepository.save(orderFromDb);
 		
 	}

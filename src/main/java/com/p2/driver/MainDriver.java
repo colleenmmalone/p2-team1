@@ -21,14 +21,10 @@ import com.p2.model.Orders;
 import com.p2.dao.InventoryDAO;
 import com.p2.dao.LoginsDAO;
 import com.p2.model.Inventory;
-<<<<<<< HEAD
-<<<<<<< HEAD
 import com.p2.model.Logins;
-=======
->>>>>>> cda823310ffc9b72501c7fd16d99e3561977b8d2
-=======
+
 import com.p2.model.Logins;
->>>>>>> f7008994e3a1c38ae646b6d31a9d73611d9a11d8
+
 import com.p2.util.HibernateSessFact;
 
 @SpringBootApplication
@@ -38,41 +34,6 @@ public class MainDriver {
 
 		public static void main(String[] args) {
 			SpringApplication.run(MainDriver.class, args);
-<<<<<<< HEAD
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-			OrdersDAO orderDao = new OrdersDAO();
-			OrderContentsDAO odc = new OrderContentsDAO();
-			OrderContents item = new OrderContents(5, "Matcha Cake", 50);
-			System.out.println(odc.addToExistingOrderContents(1, null));
-=======
-//			OrdersDAO orderDao = new OrdersDAO();
-//			OrderContentsDAO odc = new OrderContentsDAO();
-//			OrderContents item = new OrderContents(5, "Matcha Cake", 50);
-	//		System.out.println(odc.addToExistingOrderContents(1, null));
->>>>>>> 8cd1f9ca24526d8f9986537afb749734406daf02
-			
->>>>>>> cda823310ffc9b72501c7fd16d99e3561977b8d2
-			//I wrote this method in LoginsDAO to avoid clogging up the main driver
-			LoginsDAO.colleenLoginMethodTesting();
-			
-=======
->>>>>>> origin/springjpaworkingbranch
-			/*
-			Inventory inventory = new Inventory(1,"cheesecake",25);
-			InventoryDAO inventoryDAO = new InventoryDAO();
-			inventoryDAO.updateInventory(inventory);
-//			*/
-//			Inventory inventory = new Inventory();
-//			InventoryDAO inventoryDAO = new InventoryDAO();
-//			inventoryDAO.trying();
-//			
-			
-<<<<<<< HEAD
-=======
-
->>>>>>> cda823310ffc9b72501c7fd16d99e3561977b8d2
 		}
 }
