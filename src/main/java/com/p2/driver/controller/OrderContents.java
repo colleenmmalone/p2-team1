@@ -1,0 +1,44 @@
+package com.p2.driver.controller;
+import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@NoArgsConstructor
+@EqualsAndHashCode
+@Entity
+@Table(name = "ordercontents")
+public class OrderContents {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer ordercontentsid;
+	@Column(name="orderid", insertable=false, updatable=false)
+	private int orderID;
+	@Column(name="quantity")
+	private int quantity;
+	@Column(name="item")
+	private String item;
+	@Column(name="price")
+	private double price;
+	
+	@ToString.Exclude
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="orderid", nullable=false)
+	@JsonIgnore
+	private Orders orders;
+
+	
+//	public Orders getOrders() {
+//		return this.orders;
+//	}
+//	
+//	public void setOrders(Orders orders) {
+//		this.orders = orders;
+//	}
+
+}

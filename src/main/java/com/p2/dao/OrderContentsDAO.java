@@ -1,5 +1,7 @@
 package com.p2.dao;
 
+import java.util.List;
+
 import javax.persistence.Query;
 
 import org.hibernate.HibernateException;
@@ -29,6 +31,15 @@ public class OrderContentsDAO {
 			e.printStackTrace();
 		}
 		return result;
+	}
+	
+	public List<OrderContents> getAllOrders() {
+		try (Session session = HibernateSessFact.getSession()) {
+			return session.createQuery("From OrderContents", OrderContents.class).list();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	// delete an order based on id
