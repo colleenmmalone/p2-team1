@@ -15,17 +15,11 @@ public class HibernateSessFact {
 
 		Configuration config = new Configuration(); // load hibernate.cfg.xml
 		config.configure();
-		try {
-			
-			sessionFactory = config.buildSessionFactory(); // create new session factory
-			session = sessionFactory.openSession(); // create new session
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
+		sessionFactory = config.buildSessionFactory(); // create new session factory
+		session = sessionFactory.openSession(); // create new session
 		return session; // return current session to DAO or controller
 	}
-	
+
 	public HibernateSessFact() {
 		super();
 	}
