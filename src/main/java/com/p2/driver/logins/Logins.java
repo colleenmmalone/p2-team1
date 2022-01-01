@@ -34,7 +34,7 @@ public class Logins {
 	//status is either EMPLOYEE or CUSTOMER
 	@ToString.Exclude
 	@OneToMany(mappedBy="customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	
+	@JsonIgnore
 	private Set<Orders> orders;
 
 }
