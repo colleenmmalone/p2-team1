@@ -20,14 +20,14 @@ public class LoginsDAO {
 	static public void colleenLoginMethodTesting() {
 
 	//	Logins nu = new Logins("Strawberry", "Shortcake", "cs2", "cs2", "CUSTOMER");
-		Logins nu = new Logins("Fondant", "Funnelly", "cs3", "cs3", "CUSTOMER");
+//		Logins nu = new Logins("Fondant", "Funnelly", "cs3", "cs3", "CUSTOMER");
 //		Logins nu = new Logins("Anna", "Banana", "cs4", "cs4", "CUSTOMER");
 //		Logins nu = new Logins("Moon", "Pie", "cs5", "cs5", "CUSTOMER");
 //		System.out.println(nu.getMyOrders());
-	register(nu);
-	
-	user = getLoginByEmail("cs3");
-	System.out.println(user);
+//	register(nu);
+//	
+//	user = getLoginByEmail("cs3");
+//	System.out.println(user);
 	//System.out.println(user.getMyOrders());
 		
 		
@@ -52,7 +52,7 @@ public class LoginsDAO {
 		
 	}
 
-	static public Logins login(String email, String pswd)  { // login a user
+	public Logins login(String email, String pswd)  { // login a user
 		Session session = HibernateSessFact.getSession();
 	//	Transaction transaction = session.beginTransaction();
 		Logins l = getLoginByEmail(email);
@@ -71,7 +71,7 @@ public class LoginsDAO {
 		}
 	}
 
-	static public Logins register(Logins logins) { // register new user
+	public Logins register(Logins logins) { // register new user
 		Session session = HibernateSessFact.getSession();
 		Logins newUser;
 		newUser = getLoginByEmail(logins.getEmail());
@@ -89,7 +89,7 @@ public class LoginsDAO {
 		return newUser;
 	}
 
-	static public boolean deleteLoginByID(int id){ // delete user by id
+	public boolean deleteLoginByID(int id){ // delete user by id
 		try (Session session = HibernateSessFact.getSession()) {
 			Transaction transaction = session.beginTransaction();
 			session.createQuery("Delete From Logins where id=" + id, Logins.class).list();
@@ -102,7 +102,7 @@ public class LoginsDAO {
 		return false;
 	}
 
-	static public boolean deleteLoginByEmail(String email) { // delete a user by email
+	public boolean deleteLoginByEmail(String email) { // delete a user by email
 		try (Session session = HibernateSessFact.getSession()) {
 			Transaction transaction = session.beginTransaction();
 			session.createQuery("Delete From Logins where email='" + email+"'", Logins.class).list();
@@ -124,7 +124,7 @@ public class LoginsDAO {
 		return null;
 	}
 
-	public static Logins getLoginByID(int id) { // retrieve one user by id
+	public Logins getLoginByID(int id) { // retrieve one user by id
 		try (Session session = HibernateSessFact.getSession()) {
 			List<Logins> l = session.createQuery("From Logins where id=" + id, Logins.class).list();
 			if (l.size() != 0) {
@@ -136,7 +136,7 @@ public class LoginsDAO {
 		return null;
 	}
 
-	public static Logins getLoginByEmail(String email) { // retrieve one user by email
+	public Logins getLoginByEmail(String email) { // retrieve one user by email
 		try (Session session = HibernateSessFact.getSession()) {
 			List<Logins> l = session.createQuery("From Logins where email='" + email + "'", Logins.class).list();
 			if (l.size() != 0) {

@@ -24,7 +24,6 @@ import com.p2.model.Inventory;
 import com.p2.util.HibernateSessFact;
 
 @SpringBootApplication
-
 public class MainDriver {
 	static Session session;
 	static Integer results;
