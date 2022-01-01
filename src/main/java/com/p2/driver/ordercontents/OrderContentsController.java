@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /********To access data from axios localhost******http://localhost:8081/ordercontents*******/
-@RestController
 @RequestMapping("/ordercontents")
 @CrossOrigin("*")
+@RestController
 public class OrderContentsController {
 	
 	@Autowired
