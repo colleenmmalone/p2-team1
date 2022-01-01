@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class OrderContentsResource {
-	
-	@Autowired
-	private OrderContentsRepository orderContentRepository;
+public class OrderContentsController {
 	
 	@GetMapping("/ordercontents")
 	public List<OrderContents> retrieveOrderContents() {
