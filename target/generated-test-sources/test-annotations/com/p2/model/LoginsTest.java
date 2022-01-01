@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.p2.model.deletewhendone.Logins;
+
 public class LoginsTest {
 		static Logins l, m, n;
 
