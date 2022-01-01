@@ -28,6 +28,7 @@ public class Logins {
 	private String status;
 	//status is either EMPLOYEE or CUSTOMER
 	
+	private Set<Orders> orders;
 
 @ToString.Exclude
 private Set<Orders> myOrders;

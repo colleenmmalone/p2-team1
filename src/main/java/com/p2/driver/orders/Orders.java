@@ -1,4 +1,4 @@
-package com.p2.model;
+package com.p2.driver.orders;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.p2.driver.logins.Logins;
+import com.p2.driver.ordercontents.OrderContents;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,22 +22,27 @@ import lombok.ToString;
 @Table
 public class Orders {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column
+	@GeneratedValue
+	@Column(name="orderid")
 	private int orderID;
-	@Column
+	@Column(name="customer", insertable=false, updatable=false)
 	private int customer;
-	@Column
+	@Column(name="total")
 	private double total;
-	@Column
+	@Column(name="order_date")
 	private Date orderDate;
-	@Column
+	@Column(name="order_status")
 	private String orderStatus;
+
+	@ToString.Exclude
+	@OneToMany(mappedBy="orders", fetch = FetchType.LAZY, cascade= CascadeType.ALL)
+	private List<OrderContents> orderContents;
 	
 	@ToString.Exclude
-	private Set<OrderContents> orderContents;
-	@ToString.Exclude
-	private Logins user;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="customer", nullable=false)
+	@JsonIgnore
+	private Logins logins;
 	
 	public Orders(int orderID, int customer, double total, Date orderDate, String orderStatus) {
 		super();
@@ -44,18 +53,5 @@ public class Orders {
 		this.orderStatus = orderStatus;
 	}
 
-	
-	public Set<OrderContents> getOrderContents() {
-		return this.orderContents;
-	}
-	
-	public void setOrderContents(Set<OrderContents> orderContents) {
-		this.orderContents = orderContents;
-	}
-
-
-	public Orders(int orderID2, int customer2, String string, int i, String orderStatus2) {
-		// TODO Auto-generated constructor stub
-	}
 
 }

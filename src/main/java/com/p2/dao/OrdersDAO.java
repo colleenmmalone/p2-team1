@@ -50,24 +50,24 @@ public class OrdersDAO {
 	
 	
 	// updates an order 
-	public boolean updateOrders(Orders order) {
-		try (Session session = HibernateSessFact.getSession()) {
-			Transaction transaction = session.beginTransaction();
-			Orders updateOrder = session.load(Orders.class, order.getOrderID());
-			updateOrder.setCustomer(order.getCustomer());
-			updateOrder.setTotal(order.getTotal());
-			updateOrder.setOrderStatus(order.getOrderStatus());
+//	public boolean updateOrders(Orders order) {
+//		try (Session session = HibernateSessFact.getSession()) {
+//			Transaction transaction = session.beginTransaction();
+//			Orders updateOrder = session.load(Orders.class, order.getOrderID());
+//			updateOrder.setCustomer(order.getCustomer());
+//			updateOrder.setTotal(order.getTotal());
+//			updateOrder.setOrderStatus(order.getOrderStatus());
 //			updateOrder.setOrderDate(order.setOrderDate(date));
-			
-			session.update(updateOrder);
-			transaction.commit();
-			session.close();
-		} catch (HibernateException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-		
+//			
+//			session.update(updateOrder);
+//			transaction.commit();
+//			session.close();
+//		} catch (HibernateException e) {
+//			e.printStackTrace();
+//		}
+//		return false;
+//	}
+//		
 	
 
 }
