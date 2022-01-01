@@ -57,7 +57,7 @@ public class OrderContentsController {
 		orderContentsService.add(orderContents);
 	}
 	
-	@PutMapping
+	@PutMapping("/updateordercontents/{id}")
 	public void updateOrderContents(@PathVariable(value = "id") int id, @RequestBody OrderContents orderContents) {
 		orderContentsService.updateExistingOrderContents(orderContents, id);
 		

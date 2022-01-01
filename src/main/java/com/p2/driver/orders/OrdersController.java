@@ -53,7 +53,7 @@ public class OrdersController {
 		ordersService.add(orders);
 	}
 	
-	@PutMapping
+	@PutMapping("/updateorder/{id}")
 	public void updateOrder(@PathVariable(value = "id") int id, @RequestBody Orders orders) {
 		ordersService.updateOrders(orders, id);
 	}
