@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/********To access data from axios localhost******http://localhost:8081/orders/{param}*******/
+/********To access data from axios localhost******http://localhost:8081/orders/*******/
 @RestController
 @RequestMapping("/orders")
 @CrossOrigin("*")

@@ -31,7 +31,7 @@ public class Orders {
 	private Date orderDate;
 	@Column(name="order_status")
 	private String orderStatus;
-	
+
 	@ToString.Exclude
 	@OneToMany(mappedBy="orders", fetch = FetchType.LAZY, cascade= CascadeType.ALL)
 	private List<OrderContents> orderContents;
