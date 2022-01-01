@@ -2,6 +2,8 @@ package com.p2.util;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.sql.SQLException;
+
 import org.hibernate.Session;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -28,11 +30,13 @@ class SessFactTest {
 	}
 
 	@Test
-	void getSessionTest() {
-		Session s = HibernateSessFact.getSession();
-		assertNotNull(s);
+	void getSessionTest() throws Exception {
+		Session s;
+			s = HibernateSessFact.getSession();
+			assertNotNull(s);
+
 	}
-	
+
 	@Test
 	void constructorTest() {
 		HibernateSessFact h = new HibernateSessFact();

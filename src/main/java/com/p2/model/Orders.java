@@ -32,6 +32,8 @@ public class Orders {
 	
 	@ToString.Exclude
 	private Set<OrderContents> orderContents;
+	@ToString.Exclude
+	private Logins user;
 	
 	public Orders(int orderID, int customer, double total, Date orderDate, String orderStatus) {
 		super();

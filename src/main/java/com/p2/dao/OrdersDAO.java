@@ -57,7 +57,7 @@ public class OrdersDAO {
 			updateOrder.setCustomer(order.getCustomer());
 			updateOrder.setTotal(order.getTotal());
 			updateOrder.setOrderStatus(order.getOrderStatus());
-			updateOrder.setOrderDate(order.setOrderDate(date));
+//			updateOrder.setOrderDate(order.setOrderDate(date));
 			
 			session.update(updateOrder);
 			transaction.commit();
