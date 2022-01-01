@@ -41,6 +41,12 @@
 			<version>2.12.4</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.12.3</version>
+		</dependency>
+
 		<!-- SPRING DEPENDENCIES -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -73,9 +79,7 @@
 			<artifactId>h2</artifactId>
 		</dependency>
 
-<<<<<<< HEAD
 
-<<<<<<< HEAD
         <!-- lombok -->
         <dependency>
 		<groupId>org.projectlombok</groupId>
@@ -84,9 +88,7 @@
 		<scope>provided</scope>
 	</dependency>
         
-=======
-=======
->>>>>>> 8cd1f9ca24526d8f9986537afb749734406daf02
+
 		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -94,7 +96,7 @@
 			<version>1.18.22</version><!--$NO-MVN-MAN-VER$ -->
 			<scope>provided</scope>
 		</dependency>
->>>>>>> cda823310ffc9b72501c7fd16d99e3561977b8d2
+
 
 	</dependencies>
 

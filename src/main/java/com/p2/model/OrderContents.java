@@ -39,11 +39,19 @@ public class OrderContents {
 		// TODO Auto-generated constructor stub
 	}
 	
-//	public OrderContents(int quantity, String item, double price) {
-//		super();
-//		this.quantity = quantity;
-//		this.item = item;
-//		this.price = price;
-//	}
+	public OrderContents(int quantity, String item, double price) {
+		super();
+		this.quantity = quantity;
+		this.item = item;
+		this.price = price;
+	}
+	
+	public Orders getOrders() {
+		return this.orders;
+	}
+	
+	public void setOrders(Orders orders) {
+		this.orders = orders;
+	}
 
 }

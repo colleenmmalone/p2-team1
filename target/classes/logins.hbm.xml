@@ -8,7 +8,7 @@
 
       
       <id name = "id" type = "int" column = "id">
-         <generator class="native"/>
+         <generator class="identity"/>
       </id>
       
       <property name = "firstName" column = "first_name" type = "string"/>
@@ -16,10 +16,19 @@
       <property name = "email" column = "email" type = "string"/>
       <property name = "pswd" column = "pswd" type = "string"/>
       <property name = "status" column = "status" type = "string"/>
+<<<<<<< HEAD
 	<set name="myOrders" inverse="true" cascade="all">
 		<key column="customer" />
 		<one-to-many class="com.p2.model.Orders" />
 	</set>
+=======
+      
+      <set name="orders" inverse="true" cascade="all">
+      	<key column="customer"/>
+      	<one-to-many class="com.p2.model.Orders" />
+      </set>
+      
+>>>>>>> origin/springjpaworkingbranch
    </class>
 
    
