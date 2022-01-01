@@ -19,7 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.p2.model.Logins;
+import com.p2.model.deletewhendone.Logins;
 import com.p2.repositories.LoginsRepository;
 
 import org.apache.catalina.filters.AddDefaultCharsetFilter;
@@ -30,12 +30,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @RunWith(MockitoJUnitRunner.class)
-class LoginsDAOTest {
+class LoginsDAODeleteWhenDoneTest {
 	
-	LoginsDAO real = new LoginsDAO();
+	LoginsDAODeleteWhenDone real = new LoginsDAODeleteWhenDone();
 	
 	@Mock
-	LoginsDAO ldao = org.mockito.Mockito.mock(LoginsDAO.class);
+	LoginsDAODeleteWhenDone ldao = org.mockito.Mockito.mock(LoginsDAODeleteWhenDone.class);
 	
 	@Mock
 	LoginsRepository lr = org.mockito.Mockito.mock(LoginsRepository.class);

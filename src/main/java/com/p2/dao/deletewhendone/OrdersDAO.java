@@ -1,4 +1,4 @@
-package com.p2.dao;
+package com.p2.dao.deletewhendone;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.p2.model.Orders;
+import com.p2.model.deletewhendone.Orders;
 import com.p2.util.HibernateSessFact;
 
 public class OrdersDAO {
