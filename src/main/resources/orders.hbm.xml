@@ -4,7 +4,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name = "com.p2.model.Orders" table = "orders">
+   <class name = "com.p2.driver.orders.Orders" table = "orders">
 
       
       <id name = "orderID" type = "int" column = "orderid">
@@ -17,14 +17,8 @@
       <property name = "orderStatus" column = "orderstatus" type = "string"/>
       <set name="orderContents" inverse="true" cascade="all">
       	<key column = "orderid"/>
-      	<one-to-many class="com.p2.model.OrderContents"/>
+      	<one-to-many class="com.p2.driver.ordercontents.OrderContents"/>
        </set>
-<<<<<<< HEAD
-      <many-to-one class="com.p2.model.Logins" column="customer" name="user" not-null="true" cascade="all" insert="false" update="false"/>
-=======
-      
-      
->>>>>>> origin/springjpaworkingbranch
    </class>
 
    

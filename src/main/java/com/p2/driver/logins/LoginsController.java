@@ -4,8 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,18 +41,17 @@ public class LoginsController {
 		return ls.login(email, pswd);
 	}
 	
-	//NEED HELP MAPPING POST METHOD
-	public Logins register(/*responsebody*/) {
-//		ls.register(/*responsebody*/);
-		return null;
+	@PostMapping("/register")
+	public Logins register(@RequestBody Logins newUser) {
+		return ls.register(newUser);
 	}
 	
-	@GetMapping("/delete/{email}")
+	@DeleteMapping("/email/{email}")
 	public boolean deleteByEmail(@PathVariable String email){
 		return ls.deleteLoginByEmail(email);
 	}
 	
-	@GetMapping("/delete/{id}")
+	@DeleteMapping("/id/{id}")
 	public boolean deleteByID(@PathVariable int id){
 		return ls.deleteLoginByID(id);
 	}
