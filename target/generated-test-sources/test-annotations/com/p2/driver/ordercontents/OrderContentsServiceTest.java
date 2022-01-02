@@ -1,4 +1,4 @@
-package com.p2.dao;
+package com.p2.driver.ordercontents;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,18 +10,18 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.p2.model.OrderContents;
-import com.p2.model.Orders;
-
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+
+import com.p2.driver.orders.Orders;
+
 import static org.mockito.Mockito.*;
 
-class OrderContentsDAOTest {
+class OrderContentsServiceTest {
 	
 	@Mock
-	private OrderContentsDAO orderContentsDAO;
+	private OrderContentsService orderContentsService;
 	
 	@InjectMocks private Orders orders;
 	
@@ -29,7 +29,7 @@ class OrderContentsDAOTest {
 
 	@Before
 	void setUp() throws Exception {
-		orderContentsDAO = mock(OrderContentsDAO.class);
+		orderContentsService = mock(OrderContentsService.class);
 	}
 
 	@AfterEach
@@ -38,14 +38,14 @@ class OrderContentsDAOTest {
 
 	@Test
 	void testAddOrderContents() {
-		assertTrue(orderContentsDAO.deleteOrderContents(1));
+		assertEquals(true, orderContentsService.deleteOrderContents(1));
 		
 	}
 	
 	@Test
 	void deleteOrderContentsByID() {
 		final int id = 70;
-		orderContentsDAO.deleteOrderContents(id);
+		orderContentsService.deleteOrderContents(id);
 		assertEquals(true, true);
 	}
 

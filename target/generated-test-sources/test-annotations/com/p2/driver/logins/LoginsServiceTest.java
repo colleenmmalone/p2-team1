@@ -1,4 +1,4 @@
-package com.p2.dao;
+package com.p2.driver.logins;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -19,9 +19,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.p2.model.deletewhendone.Logins;
-import com.p2.repositories.LoginsRepository;
-
 import org.apache.catalina.filters.AddDefaultCharsetFilter;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -30,12 +27,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @RunWith(MockitoJUnitRunner.class)
-class LoginsDAODeleteWhenDoneTest {
+class LoginsServiceTest {
 	
-	LoginsDAODeleteWhenDone real = new LoginsDAODeleteWhenDone();
+	LoginsService real = new LoginsService();
 	
 	@Mock
-	LoginsDAODeleteWhenDone ldao = org.mockito.Mockito.mock(LoginsDAODeleteWhenDone.class);
+	LoginsService ls = org.mockito.Mockito.mock(LoginsService.class);
 	
 	@Mock
 	LoginsRepository lr = org.mockito.Mockito.mock(LoginsRepository.class);
@@ -44,22 +41,22 @@ class LoginsDAODeleteWhenDoneTest {
 
 	@Test
 	public void getLoginsTest() {
-		when(ldao.getAllLogins()).thenReturn(Stream
+		when(ls.getAllLogins()).thenReturn(Stream
 				.of(new Logins(), new Logins()).collect(Collectors.toList()));
-		assertEquals(2,  ldao.getAllLogins().size());		
+		assertEquals(2,  ls.getAllLogins().size());		
 	}
 	
 	@Test
 	public void getOneLoginsEmailTest() {
-		Logins l = new Logins("hi","hi","hi","hi","hi");
-		when(ldao.getLoginByEmail("hi")).thenReturn((l));
-		assertEquals(l, ldao.getLoginByEmail("hi"));		
+		Logins l = new Logins();
+		when(ls.getLoginByEmail("hi")).thenReturn((l));
+		assertEquals(l, ls.getLoginByEmail("hi"));		
 	}
 	
 	@Test
 	public void getOneLoginsIDTest() {
-		when(ldao.getLoginByID(1)).thenReturn((new Logins(1,"a","a","a","a","a")));
-		ldao.getLoginByID(1);
+		when(ls.getLoginByID(1)).thenReturn((new Logins()));
+		ls.getLoginByID(1);
 	}
 	
 //	@Test
