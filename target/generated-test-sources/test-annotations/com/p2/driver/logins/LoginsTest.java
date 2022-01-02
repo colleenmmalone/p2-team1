@@ -1,6 +1,9 @@
 package com.p2.driver.logins;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.HashSet;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -8,7 +11,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.p2.model.deletewhendone.Logins;
+import com.p2.driver.orders.Orders;
+
 
 public class LoginsTest {
 		static Logins l, m, n;
@@ -16,9 +20,14 @@ public class LoginsTest {
 
 		@BeforeAll
 		public static void setUpBeforeClass() throws Exception {
-			l = new Logins("first", "last", "em", "pswd", "status");
-			m = new Logins(2,"first", "last", "em", "pswd", "status");
-			n = new Logins();		
+			l = new Logins();	
+			m = new Logins();
+			n = new Logins();
+		}
+		
+		@Test void equalsTest() {
+			assertEquals(n, m);
+			assertEquals(m.hashCode(), n.hashCode());
 		}
 		
 		@Test
@@ -61,7 +70,23 @@ public class LoginsTest {
 		public void toStringTest() {
 			assertNotNull(l.toString());
 		}
+		
+		@Test
+		public void getOrdersTest() {
+			l.setOrders(new HashSet<Orders>());
+			assertNotNull(l.getOrders());
+		}
+		
+		
 
+		@Test
+		public void Should_Pass_All_Pojo_Tests() {
+		    // given
+		    final Class<Logins> classUnderTest = Logins.class;
+
+		  assertNotNull(classUnderTest);
+		}
+	
 
 	}
 
