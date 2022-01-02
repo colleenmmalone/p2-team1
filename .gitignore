@@ -4,4 +4,4 @@
 Lumberjack/loggy.log
 target/classes/META-INF/maven/com.p2/P2-Team1/pom.properties
 /target/
-node_modules
+**/node_modules

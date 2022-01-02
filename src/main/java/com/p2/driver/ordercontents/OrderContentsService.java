@@ -38,14 +38,28 @@ public class OrderContentsService {
 		return orderContents;
 	}
 	
-	// updates existing order
-	
+	// updates existing order ===Updates all values ===
 	public void updateExistingOrderContents(OrderContents orderContents, int id) {
 		OrderContents orderContentsFromDb = orderContentsRepository.findById(id).get();
 		orderContentsFromDb.setItem(orderContents.getItem());
 		orderContentsFromDb.setPrice(orderContents.getPrice());
 		orderContentsFromDb.setQuantity(orderContents.getQuantity());
 		
+		orderContentsRepository.save(orderContentsFromDb);
+	}
+	
+	// updates quantity only
+	public void updateQuantity(int quantity, int id) {
+		OrderContents orderContentsFromDb = orderContentsRepository.findById(id).get();
+		orderContentsFromDb.setQuantity(quantity);
+		orderContentsRepository.save(orderContentsFromDb);
+	}
+	
+	// updates price
+	
+	public void updatePrice(int price, int id) {
+		OrderContents orderContentsFromDb = orderContentsRepository.findById(id).get();
+		orderContentsFromDb.setPrice(price);
 		orderContentsRepository.save(orderContentsFromDb);
 	}
 
