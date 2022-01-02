@@ -64,12 +64,5 @@ class LoginsServiceTest {
 //		when(ldao.getLoginByID(1)).thenThrow(NullPointerException.class);
 //		ldao.getLoginByID(1);
 //	}
-	
-	@Test
-	public void getLogins2Test() {
-	
-		assertNotEquals(1,  real.getAllLogins().size());		
-	}
-
 
 }
