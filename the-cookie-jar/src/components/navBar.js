@@ -1,13 +1,16 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
+import "../App.css"
+
 import Settings from "./Settings"
 import About from "./About";
 import Store from "./Store";
 import Home from "./Home";
-import "../App.css"
 import Orders from './Orders';
 import Cart from './Cart';
+
+import cartImg from './pictures/shopping-cart.png'
 
 
 export default function NavBar() {
@@ -18,7 +21,7 @@ export default function NavBar() {
      <button onClick={about}>About</button>&emsp;
      <button onClick={settings}>Settings</button>&emsp;
      <button onClick={orders}>Orders</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-     <button onClick={cart}>Cart</button>
+     <img src={cartImg} id="cartImg" onClick={cart}/>
     </div>
   );
 }
