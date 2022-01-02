@@ -1,4 +1,4 @@
-package com.p2.dao;
+package com.p2.driver.logins;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
