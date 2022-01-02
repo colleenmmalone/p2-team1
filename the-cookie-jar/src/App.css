@@ -38,6 +38,17 @@
   margin: 5px;
 }
 
+#navBar button{
+  background-color: transparent;
+  border: none;
+}
+
+#main{
+  width: 95%;
+  background-color: pink;
+  padding: 20px 0px;
+}
+
 .App-link {
   color: #61dafb;
 }
