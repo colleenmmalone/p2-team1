@@ -2,10 +2,6 @@
 /.metadata*
 */.metadata*
 Lumberjack/loggy.log
-<<<<<<< HEAD
 target/classes/META-INF/maven/com.p2/P2-Team1/pom.properties
 /target/
-=======
-/target/classes/META-INF/maven/com.p2/P2-Team1/pom.properties
-
->>>>>>> f7008994e3a1c38ae646b6d31a9d73611d9a11d8
+node_modules

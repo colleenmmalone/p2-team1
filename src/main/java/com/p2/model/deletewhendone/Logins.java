@@ -1,4 +1,4 @@
-package com.p2.model;
+package com.p2.model.deletewhendone;
 
 import java.util.Set;
 

@@ -1,6 +1,6 @@
-package com.p2.dao;
+package com.p2.dao.deletewhendone;
 
-import com.p2.model.Inventory;
+import com.p2.model.deletewhendone.Inventory;
 import com.p2.util.HibernateSessFact;
 
 import java.util.List;
