@@ -20,5 +20,9 @@ public class Inventory {
 		private String items;
 		@Column(name="quantity")
 		private int quantity;	
+		@Column
+		private double price;
+		@Column(name="store_img")
+		private String storeImg;
 	
 }
