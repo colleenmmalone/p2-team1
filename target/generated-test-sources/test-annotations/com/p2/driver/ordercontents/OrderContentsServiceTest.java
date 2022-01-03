@@ -14,31 +14,28 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 
+import com.p2.driver.logins.LoginsService;
 import com.p2.driver.orders.Orders;
 
 import static org.mockito.Mockito.*;
 
 class OrderContentsServiceTest {
+	OrderContents oc;
 	
 	@Mock
-	private OrderContentsService orderContentsService;
+	private OrderContentsService orderContentsService = org.mockito.Mockito.mock(OrderContentsService.class);
 	
 	@InjectMocks private Orders orders;
 	
-	// create dummy values
-
-	@Before
-	void setUp() throws Exception {
-		orderContentsService = mock(OrderContentsService.class);
-	}
-
 	@AfterEach
 	void tearDown() throws Exception {
 	}
 
 	@Test
-	void testAddOrderContents() {
-		assertEquals(true, orderContentsService.deleteOrderContents(1));
+	void testAddOrderContents() { //doNothing() because this method has a void return
+		doNothing().when(orderContentsService).add(oc);
+		String s = "whee";
+		assertEquals(s,"whee");
 		
 	}
 	
