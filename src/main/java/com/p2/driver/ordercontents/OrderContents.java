@@ -19,7 +19,7 @@ public class OrderContents {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer ordercontentsid;
 	@Column(name="orderid", insertable=false, updatable=false)
-	private int orderID;
+	private int orderid;
 	@Column(name="quantity")
 	private int quantity;
 	@Column(name="item")

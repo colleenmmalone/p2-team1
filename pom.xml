@@ -81,12 +81,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-		</dependency>
-
-
         <!-- lombok -->
         <dependency>
 		<groupId>org.projectlombok</groupId>
@@ -96,14 +90,7 @@
 	</dependency>
         
 
-		<!-- lombok -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.22</version><!--$NO-MVN-MAN-VER$ -->
-			<scope>provided</scope>
-		</dependency>
-		
+
 
 
 	</dependencies>

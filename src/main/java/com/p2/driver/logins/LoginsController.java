@@ -1,6 +1,7 @@
 package com.p2.driver.logins;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -27,8 +28,8 @@ public class LoginsController {
 	}
 	
 	@GetMapping("/id/{id}")
-    public Logins getLoginByID(@PathVariable int id) {
-        return ls.getLoginByID(id);
+    public Optional<Logins> getLoginByID(@PathVariable int id) {
+        return ls.getLoginsById(id);
     }
 	
 	@GetMapping("/email/{email}")

@@ -5,7 +5,6 @@ import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
-
 @Entity
 @Table(name="inventory")
 public class Inventory {
