@@ -26,6 +26,17 @@ public class LoginsController {
 		return ls.getAllLogins();
 	}
 	
+	@GetMapping("/whoisloggedin")
+	public Logins whoIsLoggedIn() {
+		return LoginsService.user;
+	}
+	
+	@GetMapping("/logout")
+	public Logins logout() {
+		LoginsService.user = null;
+		return LoginsService.user;
+	}
+	
 	@GetMapping("/id/{id}")
     public Logins getLoginByID(@PathVariable int id) {
         return ls.getLoginByID(id);
@@ -36,7 +47,7 @@ public class LoginsController {
         return ls.getLoginByEmail(email);
     }
 	
-	@GetMapping("/login/{email}/{pswd}")
+	@PostMapping("/login/{email}/{pswd}")
 	public Logins login(@PathVariable String email, @PathVariable String pswd){
 		return ls.login(email, pswd);
 	}
@@ -46,14 +57,10 @@ public class LoginsController {
 		return ls.register(newUser);
 	}
 	
-	@DeleteMapping("/email/{email}")
-	public boolean deleteByEmail(@PathVariable String email){
-		return ls.deleteLoginByEmail(email);
-	}
-	
-	@DeleteMapping("/id/{id}")
-	public boolean deleteByID(@PathVariable int id){
-		return ls.deleteLoginByID(id);
+	@DeleteMapping("/del/id/{id}")
+	public String deleteByID(@PathVariable int id){
+		ls.deleteLoginByID(id);
+		return "done";
 	}
 	
 	//so i don't clog  up the main driver
