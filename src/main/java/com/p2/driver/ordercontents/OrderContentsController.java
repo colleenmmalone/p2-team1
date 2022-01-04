@@ -51,7 +51,6 @@ public class OrderContentsController {
 				}
 	}
 	
-	//@requestbody returns object as a httpresponse object
 	@PostMapping 
 	public void saveOrderContents(OrderContents orderContents) {
 		orderContentsService.add(orderContents);
