@@ -51,9 +51,8 @@ public class OrderContentsController {
 				}
 	}
 	
-	//@requestbody returns object as a httpresponse object
 	@PostMapping 
-	public void saveOrderContents(@RequestBody OrderContents orderContents) {
+	public void saveOrderContents(OrderContents orderContents) {
 		orderContentsService.add(orderContents);
 	}
 	
@@ -66,7 +65,11 @@ public class OrderContentsController {
 	
 	//This method updates only the quantity || Ex. updating quantity of order contents based on id
 	@PutMapping("/updateordercontents/quantity={quantity}/{id}")
-	public void updateQuantity(@PathVariable(value = "quantity") int quantity, @PathVariable(value="id") int id) {
+	public void updateQuantity(@RequestBody OrderContents ordercontents) {
+		Integer id = ordercontents.getOrdercontentsid();
+		System.out.println(id);
+		int quantity = ordercontents.getQuantity();
+		System.out.println(quantity);
 		orderContentsService.updateQuantity(quantity, id);
 	}
 	

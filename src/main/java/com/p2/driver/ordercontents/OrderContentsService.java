@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class OrderContentsService {
@@ -49,8 +50,10 @@ public class OrderContentsService {
 	}
 	
 	// updates quantity only
-	public void updateQuantity(int quantity, int id) {
+	public void updateQuantity(int quantity, Integer id) {
 		OrderContents orderContentsFromDb = orderContentsRepository.findById(id).get();
+		System.out.println(quantity);
+		System.out.println(orderContentsFromDb);
 		orderContentsFromDb.setQuantity(quantity);
 		orderContentsRepository.save(orderContentsFromDb);
 	}
