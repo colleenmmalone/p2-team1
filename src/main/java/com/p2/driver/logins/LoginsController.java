@@ -26,6 +26,17 @@ public class LoginsController {
 		return ls.getAllLogins();
 	}
 	
+	@GetMapping("/whoisloggedin")
+	public Logins whoIsLoggedIn() {
+		return LoginsService.user;
+	}
+	
+	@GetMapping("/logout")
+	public Logins logout() {
+		LoginsService.user = null;
+		return LoginsService.user;
+	}
+	
 	@GetMapping("/id/{id}")
     public Logins getLoginByID(@PathVariable int id) {
         return ls.getLoginByID(id);
