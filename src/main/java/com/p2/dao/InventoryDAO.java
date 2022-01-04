@@ -27,7 +27,6 @@ public class InventoryDAO {
 			
 
 		}
-	
 
 	public List<Inventory> trying() {
 	   Session session = HibernateSessFact.getSession();
