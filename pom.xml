@@ -17,14 +17,10 @@
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
+		<java.version>1.8</java.version>
 	</properties>
 
-
-
 	<dependencies>
-
-
-
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -33,6 +29,25 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+		<dependency>
+     		 <groupId>org.springdoc</groupId>
+     		 <artifactId>springdoc-openapi-ui</artifactId>
+     		 <version>1.6.3</version>
+  		</dependency>
+		 <!-- suggested dependency from javalin -->  
+		<dependency>
+   			<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-simple</artifactId>
+    		<version>1.7.31</version>
+		</dependency>
+		
+
 		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
 		<dependency>
 			<groupId>log4j</groupId>
@@ -40,18 +55,19 @@
 			<version>1.2.17</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>42.2.18</version>
-		</dependency>
-
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.12.4</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.12.3</version>
+		</dependency>
+
+
 
 		<!-- SPRING DEPENDENCIES -->
 		<dependency>
@@ -80,22 +96,14 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-		</dependency>
-
-
-	
-        
         <!-- lombok -->
         <dependency>
 		<groupId>org.projectlombok</groupId>
 		<artifactId>lombok</artifactId>
-		<version>1.18.22</version>
+		<version>1.18.22</version><!--$NO-MVN-MAN-VER$-->
 		<scope>provided</scope>
 	</dependency>
-        
+
 
 	</dependencies>
 
