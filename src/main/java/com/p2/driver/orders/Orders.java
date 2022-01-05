@@ -23,7 +23,7 @@ public class Orders {
 	@Id
 	@GeneratedValue
 	@Column(name="orderid")
-	private int orderID;
+	private int orderid;
 	@Column(name="customer", insertable=false, updatable=false)
 	private int customer;
 	@Column(name="total")
@@ -43,9 +43,9 @@ public class Orders {
 	@JsonIgnore
 	private Logins logins;
 	
-	public Orders(int orderID, int customer, double total, Date orderDate, String orderStatus) {
+	public Orders(int orderid, int customer, double total, Date orderDate, String orderStatus) {
 		super();
-		this.orderID = orderID;
+		this.orderid = orderid;
 		this.customer = customer;
 		this.total = total;
 		this.orderDate = orderDate;
