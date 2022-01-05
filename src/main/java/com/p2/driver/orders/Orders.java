@@ -18,8 +18,7 @@ import lombok.ToString;
 
 @Data
 @NoArgsConstructor
-@Entity
-@Table
+@Entity 
 public class Orders {
 	@Id
 	@GeneratedValue
