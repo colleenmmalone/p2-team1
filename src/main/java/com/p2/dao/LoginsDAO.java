@@ -6,7 +6,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.p2.model.Inventory;
+
 import com.p2.model.Logins;
 import com.p2.util.HibernateSessFact;
 

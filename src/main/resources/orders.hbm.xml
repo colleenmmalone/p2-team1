@@ -7,7 +7,7 @@
    <class name = "com.p2.driver.orders.Orders" table = "orders">
 
       
-      <id name = "orderID" type = "int" column = "orderid">
+      <id name = "orderid" type = "int" column = "orderid">
          <generator class="native"/>
       </id>
       

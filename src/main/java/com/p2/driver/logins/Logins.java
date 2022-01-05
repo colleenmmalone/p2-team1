@@ -38,14 +38,13 @@ public class Logins {
 	private Set<Orders> orders;
 	
 	
-	public Logins(String firstName, String lastName, String email, String pswd, String status, Set<Orders> orders) {
+	public Logins(String firstName, String lastName, String email, String pswd, String status) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.pswd = pswd;
 		this.status = status;
-		this.orders = orders;
 	}
 	
 	public Logins(String email, String pswd) {
