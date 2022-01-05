@@ -4,18 +4,21 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name = "com.p2.model.Orders" table = "orders">
+   <class name = "com.p2.driver.orders.Orders" table = "orders">
 
       
       <id name = "orderID" type = "int" column = "orderid">
          <generator class="native"/>
       </id>
       
-      <property name = "customer" column = "customer" type = "int"/>
+      <property name = "customer" column = "customer" type="int"/>
       <property name = "total" column = "total" type = "double"/>
       <property name = "orderDate" column = "orderdate" type = "date"/>
       <property name = "orderStatus" column = "orderstatus" type = "string"/>
-      
+      <set name="orderContents" inverse="true" cascade="all">
+      	<key column = "orderid"/>
+      	<one-to-many class="com.p2.driver.ordercontents.OrderContents"/>
+       </set>
    </class>
 
    
