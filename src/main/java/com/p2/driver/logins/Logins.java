@@ -47,5 +47,13 @@ public class Logins {
 		this.status = status;
 		this.orders = orders;
 	}
+	
+	public Logins(String email, String pswd) {
+		super();
+
+		this.email = email;
+		this.pswd = pswd;
+
+	}
 
 }
