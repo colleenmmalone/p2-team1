@@ -67,11 +67,7 @@
 			<version>2.12.3</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.12.3</version>
-		</dependency>
+
 
 		<!-- SPRING DEPENDENCIES -->
 		<dependency>
@@ -107,6 +103,7 @@
 		<version>1.18.22</version><!--$NO-MVN-MAN-VER$-->
 		<scope>provided</scope>
 	</dependency>
+
 
 	</dependencies>
 
