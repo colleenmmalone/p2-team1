@@ -47,10 +47,16 @@ public class LoginsController {
         return ls.getLoginByEmail(email);
     }
 	
-	@PostMapping("/login/{email}/{pswd}")
-	public Logins login(@PathVariable String email, @PathVariable String pswd){
-		return ls.login(email, pswd);
+//	@PostMapping("/login/{email}/{pswd}")
+//	public Logins login(@PathVariable String email, @PathVariable String pswd){
+//		return ls.login(email, pswd);
+//	}
+	
+	@PostMapping("/login")
+	public Logins login(@RequestBody Logins login){
+		return ls.login(login.getEmail(), login.getPswd());
 	}
+	
 	
 	@PostMapping("/register")
 	public Logins register(@RequestBody Logins newUser) {
