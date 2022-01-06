@@ -32,7 +32,7 @@ public class OrdersService {
 		newOrder.setTotal(orders.getTotal());
 		newOrder.setCustomer(orders.getCustomer());
 		newOrder.setOrderContents(OrderContents);
-		
+		System.out.println(newOrder);
 		ordersRepository.save(newOrder);
 	}
 	

@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.p2.driver.logins.Logins;
 import com.p2.driver.ordercontents.OrderContents;
@@ -19,6 +21,7 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @Entity 
+
 public class Orders {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,6 +31,8 @@ public class Orders {
 	private int customer;
 	@Column(name="total")
 	private double total;
+	
+	@JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
 	@Column(name="order_date")
 	private Date orderDate;
 	@Column(name="order_status")

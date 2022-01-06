@@ -13,7 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Entity
-@Table(name = "ordercontents")
+
 public class OrderContents {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
