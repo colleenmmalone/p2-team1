@@ -27,11 +27,18 @@ public class OrdersService {
 		Orders newOrder = new Orders();
 		List<OrderContents> OrderContents = orders.getOrderContents();
 
+		// this is the new order from front end
 		newOrder.setOrderDate(orders.getOrderDate());
 		newOrder.setOrderStatus(orders.getOrderStatus());
 		newOrder.setTotal(orders.getTotal());
 		newOrder.setCustomer(orders.getCustomer());
+		
 		ordersRepository.save(newOrder);
+		System.out.println(newOrder.getOrderid());
+		// save and current ID 
+		
+		newOrder.getOrderid();
+		OrderContents.forEach(ele -> ele.setOrderid(newOrder.getOrderid()));
 		newOrder.setOrderContents(OrderContents);
 		System.out.println(newOrder);
 		ordersRepository.save(newOrder);
