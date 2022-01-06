@@ -33,8 +33,8 @@ public class OrdersService {
 		newOrder.setTotal(orders.getTotal());
 		newOrder.setCustomer(orders.getCustomer());
 		
+		//get new order id and save to ordercontentsid
 		ordersRepository.save(newOrder);
-		System.out.println(newOrder.getOrderid());
 		// save and current ID 
 		
 		newOrder.getOrderid();
