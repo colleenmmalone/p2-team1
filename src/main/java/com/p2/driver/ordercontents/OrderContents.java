@@ -18,21 +18,25 @@ public class OrderContents {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer ordercontentsid;
-	@Column(name="orderid", insertable=false, updatable=false, nullable=true)
+	
+	@Column(name="orderid")
 	private Integer orderid;
+	
 	@Column(name="quantity")
 	private int quantity;
+	
 	@Column(name="item")
 	private String item;
+	
 	@Column(name="price")
 	private double price;
 	
 	@ToString.Exclude
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="orderid", nullable=false)
+	@JoinColumn(name="orderid", nullable=false, insertable=false, updatable=false)
 	@JsonIgnore
 	private Orders orders;
-
+	
 	
 //	public Orders getOrders() {
 //		return this.orders;

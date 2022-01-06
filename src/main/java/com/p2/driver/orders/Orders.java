@@ -21,10 +21,10 @@ import lombok.ToString;
 @Entity 
 public class Orders {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="orderid")
-	private int orderID;
-	@Column(name="customer", insertable=false, updatable=false)
+	private Integer orderid;
+	@Column(name="customer")
 	private int customer;
 	@Column(name="total")
 	private double total;
@@ -39,13 +39,12 @@ public class Orders {
 	
 	@ToString.Exclude
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="customer", nullable=false)
 	@JsonIgnore
 	private Logins logins;
 	
-	public Orders(int orderID, int customer, double total, Date orderDate, String orderStatus) {
+	public Orders(int orderid, int customer, double total, Date orderDate, String orderStatus) {
 		super();
-		this.orderID = orderID;
+		this.orderid = orderid;
 		this.customer = customer;
 		this.total = total;
 		this.orderDate = orderDate;

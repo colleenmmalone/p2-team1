@@ -1,10 +1,13 @@
 package com.p2.driver.orders;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.p2.driver.ordercontents.OrderContents;
 
 
 @Service
@@ -20,7 +23,17 @@ public class OrdersService {
 	
 	// adds an order
 	public void add(Orders orders) {
-		ordersRepository.save(orders);
+		System.out.println(orders.getOrderContents());
+		List<OrderContents> OrderContents = orders.getOrderContents();
+		
+		Orders newOrder = new Orders();
+		newOrder.setOrderDate(orders.getOrderDate());
+		newOrder.setOrderStatus(orders.getOrderStatus());
+		newOrder.setTotal(orders.getTotal());
+		newOrder.setCustomer(orders.getCustomer());
+		newOrder.setOrderContents(OrderContents);
+		
+		ordersRepository.save(newOrder);
 	}
 	
 	// deletes order base on id
