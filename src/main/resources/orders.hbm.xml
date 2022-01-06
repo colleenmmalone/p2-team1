@@ -7,8 +7,8 @@
    <class name = "com.p2.driver.orders.Orders" table = "orders">
 
       
-      <id name = "orderID" type = "int" column = "orderid">
-         <generator class="native"/>
+      <id name = "orderid" type = "int" column = "orderid">
+         <generator class="identity"/>
       </id>
       
       <property name = "customer" column = "customer" type="int"/>

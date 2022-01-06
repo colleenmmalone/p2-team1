@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.p2.driver.logins.Logins;
@@ -19,13 +20,14 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @Entity 
+@Table(name="orders")
 public class Orders {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="orderid")
-	private int orderID;
-	@Column(name="customer", insertable=false, updatable=false)
-	private int customer;
+	private Integer orderid;
+	@Column(name="customer")
+	private Integer customer;
 	@Column(name="total")
 	private double total;
 	@Column(name="order_date")
@@ -39,13 +41,12 @@ public class Orders {
 	
 	@ToString.Exclude
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="customer", nullable=false)
 	@JsonIgnore
 	private Logins logins;
 	
-	public Orders(int orderID, int customer, double total, Date orderDate, String orderStatus) {
+	public Orders(int orderid, Integer customer, double total, Date orderDate, String orderStatus) {
 		super();
-		this.orderID = orderID;
+		this.orderid = orderid;
 		this.customer = customer;
 		this.total = total;
 		this.orderDate = orderDate;
