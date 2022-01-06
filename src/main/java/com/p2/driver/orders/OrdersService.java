@@ -24,9 +24,9 @@ public class OrdersService {
 	// adds an order
 	public void add(Orders orders) {
 		System.out.println(orders.getOrderContents());
-		List<OrderContents> OrderContents = orders.getOrderContents();
-		
 		Orders newOrder = new Orders();
+		List<OrderContents> OrderContents = orders.getOrderContents();
+
 		newOrder.setOrderDate(orders.getOrderDate());
 		newOrder.setOrderStatus(orders.getOrderStatus());
 		newOrder.setTotal(orders.getTotal());
