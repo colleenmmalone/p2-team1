@@ -13,7 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Entity
-
+@Table(name = "ordercontents")
 public class OrderContents {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +33,7 @@ public class OrderContents {
 	
 	@ToString.Exclude
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="orderid", nullable=false, insertable=false, updatable=false)
+	@JoinColumn(name="orderid", referencedColumnName="orderid", nullable=false, insertable=false, updatable=false)
 	@JsonIgnore
 	private Orders orders;
 	

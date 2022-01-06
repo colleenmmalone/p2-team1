@@ -31,6 +31,7 @@ public class OrdersService {
 		newOrder.setOrderStatus(orders.getOrderStatus());
 		newOrder.setTotal(orders.getTotal());
 		newOrder.setCustomer(orders.getCustomer());
+		ordersRepository.save(newOrder);
 		newOrder.setOrderContents(OrderContents);
 		System.out.println(newOrder);
 		ordersRepository.save(newOrder);
