@@ -25,7 +25,7 @@ public class Orders {
 	@Column(name="orderid")
 	private int orderid;
 	@Column(name="customer", insertable=false, updatable=false)
-	private int customer;
+	private Integer customer;
 	@Column(name="total")
 	private double total;
 	@Column(name="order_date")
