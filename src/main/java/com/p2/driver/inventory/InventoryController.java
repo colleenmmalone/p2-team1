@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.p2.driver.ordercontents.OrderContents;
+
 @RestController
 @RequestMapping("/inventory")
 @CrossOrigin("*")
@@ -38,9 +40,11 @@ public class InventoryController {
 		inventoryService.addItem(inventory);
 	}
 	
-	@PutMapping
-	public void addItem(@PathVariable(value = "id")int id, @RequestBody Inventory inventory) {
-		inventoryService.updateInventory(inventory,id);
+	@PutMapping("/updateinventory/{id}")
+	public void updateQuantity(@PathVariable(value = "id")int id, @RequestBody Inventory inventory){
+		
+		inventoryService.updateQuantity(inventory, id);
 	}
 	
 }
+

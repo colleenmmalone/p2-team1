@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.p2.driver.ordercontents.OrderContents;
+
 @Service
 public class InventoryService {
 
@@ -23,10 +25,13 @@ public class InventoryService {
 		}
 
 	//update quantity  on inventory
-		public void updateInventory(Inventory inventory,int id ) {
+		public void updateQuantity(Inventory inventory,Integer id ) {
 			Inventory invent = inventoryRepository.findById(id).get();
-			invent.setItems(inventory.getItems());
+			System.out.println(inventory.getQuantity());
+			System.out.println(inventory.getPrice());
 			invent.setQuantity(inventory.getQuantity());
+			invent.setPrice(inventory.getPrice());
+			inventoryRepository.save(invent);
 		}
 	
 	
