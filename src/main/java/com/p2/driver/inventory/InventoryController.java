@@ -18,7 +18,6 @@ import com.p2.driver.ordercontents.OrderContents;
 @RestController
 @RequestMapping("/inventory")
 @CrossOrigin("*")
-
 public class InventoryController {
 
 	@Autowired
@@ -26,12 +25,13 @@ public class InventoryController {
 	
 	@GetMapping
 	public List<Inventory> getAllInventory(){
-		return inventoryService.getAllInventory();
-		
+		return inventoryService.getAllInventory();	
 	}
 	
 	@GetMapping("/{id}")
 	public Optional<Inventory> getItemById(@PathVariable(required = true) int id){
+		System.out.println("hello");
+		System.out.println(inventoryService.getItemById(id));
 		return inventoryService.getItemById(id);
 	}
 	
@@ -41,9 +41,9 @@ public class InventoryController {
 	}
 	
 	@PutMapping("/updateinventory/{id}")
-	public void updateQuantity(@PathVariable(value = "id")int id, @RequestBody Inventory inventory){
-		
-		inventoryService.updateQuantity(inventory, id);
+	public String updateQuantity(@PathVariable(value = "id") Integer id, @RequestBody Inventory inventory){
+		System.out.println(id);
+		return inventoryService.updateQuantity(inventory, id);
 	}
 	
 }

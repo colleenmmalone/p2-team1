@@ -1,4 +1,10 @@
-# p2-team1
+Backend:
+https://github.com/stitchineer/p2-team1.git
+
+Frontend:
+https://github.com/stitchineer/the-cookie-jar.git
+
+
 Project 2 with Team 1
 
 A cake shop!
