@@ -37,6 +37,7 @@
 			<version>2.6.2</version>
 		</dependency>
 		<dependency>
+		<!-- This is Swagger -->
      		 <groupId>org.springdoc</groupId>
      		 <artifactId>springdoc-openapi-ui</artifactId>
      		 <version>1.6.3</version>

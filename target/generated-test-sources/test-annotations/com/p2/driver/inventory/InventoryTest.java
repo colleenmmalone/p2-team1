@@ -11,20 +11,16 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.p2.driver.logins.Logins;
-import com.p2.driver.orders.Orders;
 
-
-public class LoginsTest {
-		static Logins l, m, n, o;
+public class InventoryTest {
+		static Inventory l, m, n, o;
 
 
 		@BeforeAll
 		public static void setUpBeforeClass() throws Exception {
-			l = new Logins();	
-			l = new Logins("em","ps");	
-			m = new Logins("1","2","3","4","5");
-			n = new Logins("1","2","3","4","5");
+			l = new Inventory();	
+			m = new Inventory();	
+			n = new Inventory();	
 		}
 		
 		@Test void equalsTest() {
@@ -33,39 +29,33 @@ public class LoginsTest {
 		}
 		
 		@Test
-		public void testFirst() {
-			l.setFirstName("hi");
-			assertEquals(l.getFirstName(), "hi");
+		public void testItemID() {
+			l.setItemid(1);
+			assertEquals(l.getItemid(), 1);
 		}
 		
 		@Test
-		public void testLast() {
-			l.setLastName("bye");
-			assertEquals(l.getLastName(), "bye");
+		public void testItems() {
+			l.setItems("bye");
+			assertEquals(l.getItems(), "bye");
 		}
 		
 		@Test
 		public void testEmail() {
-			l.setEmail("e2");
-			assertEquals(l.getEmail(), "e2");
+			l.setStoreImg("e2");
+			assertEquals(l.getStoreImg(), "e2");
 		}
 		
 		@Test
-		public void testPswd() {
-			l.setPswd("cat");
-			assertEquals(l.getPswd(), "cat");
+		public void testPrice() {
+			l.setPrice(3.21);
+			assertEquals(l.getPrice(), 3.21);
 		}
 		
 		@Test
-		public void testId() {
-			l.setId(2);
-			assertEquals(l.getId(), 2);
-		}
-		
-		@Test
-		public void testStatus() {
-			l.setStatus("string");
-			assertEquals(l.getStatus(), "string");
+		public void testQty() {
+			l.setQuantity(2);
+			assertEquals(l.getQuantity(), 2);
 		}
 		
 		@Test
@@ -73,18 +63,11 @@ public class LoginsTest {
 			assertNotNull(l.toString());
 		}
 		
-		@Test
-		public void getOrdersTest() {
-			l.setOrders(new HashSet<Orders>());
-			assertNotNull(l.getOrders());
-		}
-		
-		
 
 		@Test
 		public void Should_Pass_All_Pojo_Tests() {
 		    // given
-		    final Class<Logins> classUnderTest = Logins.class;
+		    final Class<Inventory> classUnderTest = Inventory.class;
 
 		  assertNotNull(classUnderTest);
 		}
