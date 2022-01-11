@@ -1,22 +1,21 @@
-<?xml version = "1.0" encoding = "utf-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC 
-"-//Hibernate/Hibernate Mapping DTD//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-   <class name = "com.p2.model.OrderContents" table = "orderContents">
+	<class name="com.p2.driver.ordercontents.OrderContents" table="ordercontents">
 
-      
-      <id name = "itemID" type = "int" column = "itemid">
-         <generator class="native"/>
-      </id>
-      
-      <property name = "orderID" column = "orderid" type = "int"/>
-      <property name = "item" column = "item" type = "string"/>
-      <property name = "price" column = "price" type = "double"/>
-      <property name = "quantity" column = "quantity" type = "int"/>
-      
-   </class>
 
-   
+		<id name="ordercontentsid" type="int" column="ordercontentsid">
+			<generator class="identity" />
+		</id>
+
+		<property name="orderid" insert="false" update="false" column="orderid" type="int"/>
+		<property name="item" column="item" type="string" />
+		<property name="price" column="price" type="double" />
+		<property name="quantity" column="quantity" type="int" />
+		<many-to-one class="com.p2.driver.orders.Orders" column="orderid" name="orders" not-null="true" cascade="all" />
+
+	</class>
+
+
 </hibernate-mapping>

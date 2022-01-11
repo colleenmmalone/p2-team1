@@ -4,10 +4,10 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
 
 <hibernate-mapping>
-   <class name = "com.p2.model.Inventory" table = "inventory">
+   <class name = "com.p2.driver.inventory.Inventory" table = "inventory">
 
       
-      <id name = "itemID" type = "int" column = "itemid">
+      <id name = "itemid" type = "int" column = "itemid">
          <generator class="native"/>
       </id>
       
