@@ -50,6 +50,7 @@ public class OrdersController {
 	// @request body bounds orders to the response body 
 	@PostMapping
 	public void saveOrder(@RequestBody Orders orders) {
+		System.out.println(orders);
 		ordersService.add(orders);
 	}
 	

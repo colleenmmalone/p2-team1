@@ -33,10 +33,19 @@ public class Logins {
 	private String status;
 	//status is either EMPLOYEE or CUSTOMER
 	@ToString.Exclude
-	@OneToMany(mappedBy="customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JsonIgnore
+	@OneToMany(mappedBy="customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<Orders> orders;
 	
+	
+	public Logins(String firstName, String lastName, String email, String pswd, String status) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.pswd = pswd;
+		this.status = status;
+	}
 	
 	public Logins(String firstName, String lastName, String email, String pswd, String status) {
 		super();

@@ -20,18 +20,17 @@ public class InventoryService {
 	}
 	//Retrieve item based on id
 		public Optional<Inventory> getItemById(int id){
-			Optional<Inventory> inventory = inventoryRepository.findById(id);
-			return inventory;
+			return inventoryRepository.findById(id);
 		}
 
 	//update quantity  on inventory
-		public void updateQuantity(Inventory inventory,Integer id ) {
+		public String updateQuantity(Inventory inventory, Integer id ) {
 			Inventory invent = inventoryRepository.findById(id).get();
-			System.out.println(inventory.getQuantity());
-			System.out.println(inventory.getPrice());
+			System.out.println(invent);
 			invent.setQuantity(inventory.getQuantity());
 			invent.setPrice(inventory.getPrice());
 			inventoryRepository.save(invent);
+			return "For "+invent.getItems()+" qty was set to "+invent.getQuantity()+" and price was set to "+invent.getPrice();
 		}
 	
 	
