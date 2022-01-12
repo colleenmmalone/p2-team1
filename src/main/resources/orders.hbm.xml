@@ -8,11 +8,9 @@
 
       
       <id name = "orderid" type = "int" column = "orderid">
-<<<<<<< HEAD
-         <generator class="native"/>
-=======
+
          <generator class="identity"/>
->>>>>>> origin/main
+
       </id>
       
       <property name = "customer" column = "customer" type="int"/>
