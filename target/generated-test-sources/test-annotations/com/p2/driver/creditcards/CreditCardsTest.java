@@ -1,4 +1,4 @@
-package com.p2.driver.orders;
+package com.p2.driver.creditcards;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,15 +17,15 @@ import org.junit.jupiter.api.Test;
 import com.p2.driver.logins.Logins;
 import com.p2.driver.ordercontents.OrderContents;
 
-public class OrdersTest {
-		static Orders l, m, n;
+public class CreditCardsTest {
+		static CreditCards l, m, n;
 
 
 		@BeforeAll
 		public static void setUpBeforeClass() throws Exception {
-			l = new Orders(2, 3, 6.31, new Date(), "PENDING");
-			m = new Orders();
-			n = new Orders();
+			l = new CreditCards();
+			m = new CreditCards();
+			n = new CreditCards();
 		}
 		
 		@Test void equalsTest() {
@@ -35,45 +35,39 @@ public class OrdersTest {
 		
 		@Test
 		public void testFirst() {
-			l.setCustomer(99);
-			assertEquals(l.getCustomer(), 99);
+			l.setCardID(99);
+			assertEquals(l.getCardID(), 99);
 		}
 		
 		@Test
 		public void testLast() {
-			l.setLogins(new Logins());
-			assertEquals(l.getLogins(), new Logins());
+			l.setCardNum(122345689);
+			assertEquals(l.getCardNum(), 122345689);
 		}
 		
 		@Test
 		public void testEmail() {
-			l.setOrderContents(new ArrayList<OrderContents>());
-			assertEquals(l.getOrderContents(), new ArrayList<OrderContents>());
+			l.setCvc(123);
+			assertEquals(l.getCvc(), 123);
 		}
 		
 		@Test
 		public void testPswd() {
-			l.setOrderDate(new Date());
-			assertEquals(l.getOrderDate(), new Date());
+			l.setExpDate("be");
+			assertEquals(l.getExpDate(), "be");
 		}
 		
 		@Test
 		public void testId() {
-			l.setOrderid(2);
-			assertEquals(l.getOrderid(), 2);
+			l.setHolderID(7);
+			assertEquals(l.getHolderID(), 7);
 		}
 		
 		@Test
 		public void testStatus() {
-			l.setOrderStatus("fishie");
-			assertEquals(l.getOrderStatus(), "fishie");
-		}
-		
-		@Test
-		public void testTotal() {
-			l.setTotal(5.67);
-			assertEquals(l.getTotal(), 5.67);
-		}
+			l.setHolderName("fishie");
+			assertEquals(l.getHolderName(), "fishie");
+		}	
 		
 		@Test
 		public void toStringTest() {
@@ -83,7 +77,7 @@ public class OrdersTest {
 		@Test
 		public void Should_Pass_All_Pojo_Tests() {
 		    // given
-		    final Class<OrderContents> classUnderTest = OrderContents.class;
+		    final Class<CreditCards> classUnderTest = CreditCards.class;
 
 		  assertNotNull(classUnderTest);
 		}

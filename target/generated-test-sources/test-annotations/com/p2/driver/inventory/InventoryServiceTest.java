@@ -1,6 +1,10 @@
-package com.p2.driver.logins;
+package com.p2.driver.inventory;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -19,40 +23,43 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.p2.driver.orders.Orders;
 
 import org.junit.jupiter.api.Test;
 
 @RunWith(MockitoJUnitRunner.class)
 class LoginsServiceTest {
 	
-	LoginsService real = new LoginsService();
+	InventoryService real = new InventoryService();
 	
 	@Mock
-	LoginsService ls = org.mockito.Mockito.mock(LoginsService.class);
+	InventoryService is = org.mockito.Mockito.mock(InventoryService.class);
 	
 	@Mock
-	LoginsRepository lr = org.mockito.Mockito.mock(LoginsRepository.class);
+	InventoryRepository ir = org.mockito.Mockito.mock(InventoryRepository.class);
 
 	
 
 	@Test
 	public void getLoginsTest() {
-		when(ls.getAllLogins()).thenReturn(Stream
-				.of(new Logins(), new Logins()).collect(Collectors.toList()));
-		assertEquals(2,  ls.getAllLogins().size());		
+		when(is.getAllInventory()).thenReturn(Stream
+				.of(new Inventory(), new Inventory()).collect(Collectors.toList()));
+		assertEquals(2,  is.getAllInventory().size());		
 	}
 	
 	@Test
 	public void getOneLoginsEmailTest() {
-		Logins l = new Logins();
-		when(ls.getLoginByEmail("hi")).thenReturn((l));
-		assertEquals(l, ls.getLoginByEmail("hi"));		
+		Inventory i = new Inventory();
+		when(is.updateQuantity(i, 2)).thenReturn(("hello"));
+		assertEquals("hello", is.updateQuantity(i, 2));		
 	}
 	
 	@Test
-	public void getOneLoginsIDTest() {
-		when(ls.getLoginByID(1)).thenReturn((new Logins()));
-		ls.getLoginByID(1);
+	public void addInventoryTest() {
+		Orders o = new Orders();
+		doNothing().when(is).addItem(isA(Inventory.class));
+		is.addItem(new Inventory());
+		verify(is, times(1)).addItem(new Inventory());
 	}
 	
 //	@Test

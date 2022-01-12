@@ -1,11 +1,14 @@
-package com.p2.driver.logins;
+package com.p2.driver.orders;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -25,40 +28,36 @@ import org.junit.jupiter.api.Test;
 @RunWith(MockitoJUnitRunner.class)
 class LoginsServiceTest {
 	
-	LoginsService real = new LoginsService();
+	OrdersService real = new OrdersService();
 	
 	@Mock
-	LoginsService ls = org.mockito.Mockito.mock(LoginsService.class);
+	OrdersService os = org.mockito.Mockito.mock(OrdersService.class);
 	
 	@Mock
-	LoginsRepository lr = org.mockito.Mockito.mock(LoginsRepository.class);
+	OrdersRepository or = org.mockito.Mockito.mock(OrdersRepository.class);
 
 	
 
 	@Test
 	public void getLoginsTest() {
-		when(ls.getAllLogins()).thenReturn(Stream
-				.of(new Logins(), new Logins()).collect(Collectors.toList()));
-		assertEquals(2,  ls.getAllLogins().size());		
+		when(os.getAllOrders()).thenReturn(Stream
+				.of(new Orders(), new Orders()).collect(Collectors.toList()));
+		assertEquals(2,  os.getAllOrders().size());		
 	}
 	
 	@Test
 	public void getOneLoginsEmailTest() {
-		Logins l = new Logins();
-		when(ls.getLoginByEmail("hi")).thenReturn((l));
-		assertEquals(l, ls.getLoginByEmail("hi"));		
+		Orders o = new Orders();
+		doNothing().when(os).add(isA(Orders.class));
+		os.add(new Orders());
+		verify(os, times(1)).add(new Orders());
 	}
 	
 	@Test
-	public void getOneLoginsIDTest() {
-		when(ls.getLoginByID(1)).thenReturn((new Logins()));
-		ls.getLoginByID(1);
-	}
+	public void deleteOrderTest() {
 	
-//	@Test
-//	public void getOneLoginsIDExTest() {
-//		when(ldao.getLoginByID(1)).thenThrow(NullPointerException.class);
-//		ldao.getLoginByID(1);
-//	}
+		when(os.deleteOrder(1)).thenReturn((1));
+		assertEquals(1, os.deleteOrder(1));		
+	}
 
 }

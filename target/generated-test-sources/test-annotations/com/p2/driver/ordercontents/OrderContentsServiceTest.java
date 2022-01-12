@@ -1,6 +1,10 @@
-package com.p2.driver.logins;
+package com.p2.driver.ordercontents;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -19,40 +23,44 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.p2.driver.inventory.Inventory;
+import com.p2.driver.orders.Orders;
 
 import org.junit.jupiter.api.Test;
 
 @RunWith(MockitoJUnitRunner.class)
 class LoginsServiceTest {
 	
-	LoginsService real = new LoginsService();
+	OrderContentsService real = new OrderContentsService();
 	
 	@Mock
-	LoginsService ls = org.mockito.Mockito.mock(LoginsService.class);
+	OrderContentsService ls = org.mockito.Mockito.mock(OrderContentsService.class);
 	
 	@Mock
-	LoginsRepository lr = org.mockito.Mockito.mock(LoginsRepository.class);
+	OrderContentsRepository lr = org.mockito.Mockito.mock(OrderContentsRepository.class);
 
 	
 
 	@Test
 	public void getLoginsTest() {
-		when(ls.getAllLogins()).thenReturn(Stream
-				.of(new Logins(), new Logins()).collect(Collectors.toList()));
-		assertEquals(2,  ls.getAllLogins().size());		
+		when(ls.getAllOrderContents()).thenReturn(Stream
+				.of(new OrderContents(), new OrderContents()).collect(Collectors.toList()));
+		assertEquals(2,  ls.getAllOrderContents().size());		
 	}
 	
 	@Test
 	public void getOneLoginsEmailTest() {
-		Logins l = new Logins();
-		when(ls.getLoginByEmail("hi")).thenReturn((l));
-		assertEquals(l, ls.getLoginByEmail("hi"));		
+	
+		when(ls.deleteOrderContents(1)).thenReturn((1));
+		assertEquals(1, ls.deleteOrderContents(1));		
 	}
 	
 	@Test
-	public void getOneLoginsIDTest() {
-		when(ls.getLoginByID(1)).thenReturn((new Logins()));
-		ls.getLoginByID(1);
+	public void addInventoryTest() {
+		OrderContents c  = new OrderContents();
+		doNothing().when(ls).add(isA(OrderContents.class));
+		ls.add(new OrderContents());
+		verify(ls, times(1)).add(new OrderContents());
 	}
 	
 //	@Test
