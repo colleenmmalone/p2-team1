@@ -5,6 +5,7 @@
 	<groupId>com.p2</groupId>
 	<artifactId>P2-Team1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>P2-Team1</name>
 
 	<parent>
@@ -36,6 +37,7 @@
 			<version>2.6.2</version>
 		</dependency>
 		<dependency>
+		<!-- This is Swagger -->
      		 <groupId>org.springdoc</groupId>
      		 <artifactId>springdoc-openapi-ui</artifactId>
      		 <version>1.6.3</version>
