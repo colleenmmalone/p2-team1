@@ -22,8 +22,8 @@ public class LoginsTest {
 		public static void setUpBeforeClass() throws Exception {
 			l = new Logins();	
 			l = new Logins("em","ps");	
-			m = new Logins("1","2","3","4","5");
-			n = new Logins("1","2","3","4","5");
+			m = new Logins();	
+			n = new Logins();	
 		}
 		
 		@Test void equalsTest() {
